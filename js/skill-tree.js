@@ -29,12 +29,4 @@
     ironOath:{name:"铁誓",job:"warden",branch:"oath",tier:1,cost:1,level:2,kind:"passive",desc:"提高防御与生命上限。",effect:"guard",requires:[]},
     rally:{name:"振奋号令",job:"warden",branch:"rally",tier:1,cost:1,level:2,kind:"active",mp:12,desc:"恢复生命并振奋队伍羁绊。",effect:"heal",power:1,requires:[]},
     bulwark:{name:"不破壁垒",job:"warden",branch:"bastion",tier:2,cost:2,level:4,kind:"active",mp:18,desc:"大幅减轻本回合伤害，并反击。",effect:"wall",power:1.1,requires:["shieldWall"]},
-    oathkeeper:{name:"誓约守望",job:"warden",branch:"oath",tier:2,cost:1,level:4,kind:"passive",desc:"防御提高 2 点。",effect:"def",value:2,requires:["ironOath"]},
-    lastStand:{name:"终线不退",job:"warden",branch:"oath",tier:3,cost:2,level:6,kind:"passive",desc:"生命上限提高 24 点。",effect:"hp",value:24,requires:["oathkeeper"]},
-    shieldWall:{name:"盾墙推进",job:"warden",branch:"bastion",tier:1,cost:1,level:2,kind:"active",mp:10,desc:"以盾击反制敌人，并降低受到的伤害。",effect:"wall",power:.9,requires:[]},
-    guardianLine:{name:"护卫阵线",job:"warden",branch:"bastion",tier:3,cost:2,level:6,kind:"passive",desc:"防御提高 3 点，生命上限提高 10 点。",effect:"guardian",requires:["bulwark"]},
-    rallyingCry:{name:"战吼",job:"warden",branch:"rally",tier:2,cost:1,level:4,kind:"active",mp:16,desc:"恢复生命并造成少量伤害。",effect:"healStrike",power:.8,requires:["rally"]},
-    sharedVow:{name:"同袍誓言",job:"warden",branch:"rally",tier:3,cost:2,level:6,kind:"passive",desc:"生命上限提高 12 点，队伍支援伤害提高。",effect:"sharedVow",requires:["rallyingCry"]}
-  };
-  window.SkillTree = { jobs, skills, branches:Object.fromEntries(Object.entries(jobs).map(([id,job])=>[id,job.branches])) };
-})();
+    oathkeeper:{name:"誓约守望",job:"warden",branch:"oath",tier:2,cost:1,level:4,kind:"pass
