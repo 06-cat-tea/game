@@ -25,4 +25,7 @@
     ashplate:{name:"灰炉壁垒",item:"ashplate",branch:"armor",tier:3,requires:["silverleafMail"],cost:{ore:6,shard:2}},
     herbCharm:{name:"草露护符",item:"herbCharm",branch:"charm",tier:1,requires:[],cost:{herb:3}},
     starstoneRing:{name:"星石戒环",item:"starstoneRing",branch:"charm",tier:2,requires:["herbCharm"],cost:{ore:2,herb:2,shard:2}},
-    crownSigil:{n
+    crownSigil:{name:"王朝余徽",item:"crownSigil",branch:"charm",tier:3,requires:["starstoneRing"],cost:{ore:3,shard:4}}
+  };
+  window.CraftingSystem = { items, consumables, recipes, branches:{weapon:"武器锻造",armor:"护甲编织",charm:"饰品铭刻"} };
+})();
