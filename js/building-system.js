@@ -29,16 +29,25 @@
       { id:"wreck-shrine", name:"沉船祭标", kind:"ruin", x:16, y:10, w:2, d:2, h:38, action:"wreck", description:"礁石旁的铜牌标出了沉船位置。" }
     ]
   };
-  const interiors = {
-    chapel:{ title:"晨星礼拜堂内室", room:"chapel" }, inn:{ title:"旅店内室", room:"inn" }, guild:{ title:"公会内室", room:"guild" }, tower:{ title:"钟塔内室", room:"tower" },
-    market:{ title:"杂货铺内室", room:"shop" }, hut:{ title:"林间小屋内室", room:"hut" }, waystation:{ title:"峡道驿站内室", room:"inn" },
-    forge:{ title:"灰炉锻坊内室", room:"forge" }, lighthouse:{ title:"灯塔内室", room:"tower" }, "fisher-hut":{ title:"渔屋内室", room:"hut" }
+  const rooms = {
+    chapel:{title:"晨星礼拜堂内室",room:"chapel",description:"长烛、祷告席和褪色的星图共同守着这座小礼拜堂。",props:[{id:"altar",name:"晨星祭台",x:5,y:1.8,detail:"烛火没有摇晃，烛芯里却映出一片陌生的星空。"},{id:"prayer-book",name:"祷告簿",x:2,y:3.2,detail:"最近一页写着：第十三声钟响时，请替无名者留一盏灯。"}]},
+    inn:{title:"晨星旅店内室",room:"inn",description:"木梁、长桌与炉火组成了边境旅人短暂的归处。",props:[{id:"hearth",name:"壁炉",x:2,y:2,detail:"火焰把湿斗篷烘干，也把旅人的影子投向墙上的旧地图。"},{id:"guestbook",name:"旅客名册",x:7,y:3,detail:"几名旅客在同一天离开，目的地一栏都写着灰炉峡道。"}]},
+    guild:{title:"边境公会内室",room:"guild",description:"委托卷轴、边境地图和一块磨损的木质公告板挤满了房间。",props:[{id:"noticeboard",name:"委托公告板",x:7,y:2.2,detail:"新的委托标记着被雾封住的古道。公会印章仍未干透。"},{id:"map-table",name:"边境地图",x:3,y:4,detail:"地图上有一段被反复擦除的路线，终点正是沉没神殿。"}]},
+    tower:{title:"钟塔内室",room:"tower",description:"齿轮和星盘缓慢转动，墙上的刻痕记录着钟声的偏差。",props:[{id:"star-chart",name:"星图台",x:6.6,y:2,detail:"星图上有十三个凹槽，第十三颗星的形状像一座沉没的城。"},{id:"clockwork",name:"钟塔机芯",x:2.5,y:3.2,detail:"齿轮每转一圈便停顿一下，像是在等待一只不存在的指针。"}]},
+    shop:{title:"杂货铺内室",room:"shop",description:"货架按旅途所需分类，柜台旁挂着一串磨亮的铜钥匙。",props:[{id:"supply-shelf",name:"旅行货架",x:2,y:2.3,detail:"药剂、灯油和干粮都贴着清楚的价格标签。"},{id:"ledger",name:"赊账簿",x:7,y:3.2,detail:"账簿里有一笔旧账：有人用一枚王朝银币换走了灯塔镜片。"}]},
+    hut:{title:"林间小屋内室",room:"hut",description:"干燥草束、木药箱和一扇朝向树根的窗户让屋内安静而温暖。",props:[{id:"herb-rack",name:"草药架",x:2,y:2.2,detail:"银脉草被细心捆好，叶脉在暗处透出淡淡的蓝光。"},{id:"field-notes",name:"野外手记",x:7,y:3,detail:"手记称，森林深处的古根正在重复一段被遗忘的名字。"}]},
+    waystation:{title:"峡道驿站内室",room:"inn",description:"驿站把休息铺位、车队路线图和护送装备放在同一间屋里。",props:[{id:"route-board",name:"商路板图",x:7,y:2.2,detail:"矿车路线在峡道拐角处中断，旁边留下新鲜的黑色爪痕。"},{id:"travel-bunk",name:"行军铺位",x:2,y:3.4,detail:"铺位旁放着一只空药盒，像是有人刚刚匆忙出发。"}]},
+    forge:{title:"灰炉锻坊内室",room:"forge",description:"熔炉、铁砧和冷却槽把锻造的每一步清晰地留在空气里。",props:[{id:"anvil",name:"星铁砧台",x:6.6,y:3.2,detail:"砧面留着星形凹痕，正好能嵌入一枚星屑。"},{id:"furnace",name:"灰炉熔炉",x:2,y:2.4,detail:"炉火的中心呈现灰白色，里面似乎混入了王朝旧炉的火种。"}]},
+    lighthouse:{title:"风葬灯塔内室",room:"tower",description:"狭窄的石塔内盘旋着楼梯，旧灯镜把海面的光斑折成细线。",props:[{id:"lens",name:"旧灯镜",x:6.4,y:2.2,detail:"镜片缺了一角，缺口的方向正指向雾中的无旗船。"},{id:"captain-letter",name:"浸水的信",x:2.3,y:3.3,detail:"信里只剩一句话：若第十三声响起，不要让灯塔熄灭。"}]},
+    "fisher-hut":{title:"潮汐渔屋内室",room:"hut",description:"渔网、木桶和潮位刻尺将每日的海况留在了屋内。",props:[{id:"tide-chart",name:"潮位刻尺",x:6.5,y:2.1,detail:"刻度显示潮水曾在午夜倒流，正好露出了沉船祭标。"},{id:"fishing-net",name:"旧渔网",x:2,y:3.2,detail:"网眼里缠着一小片王朝帆布和一枚没有船旗的铜扣。"}]}
   };
+  rooms.market=rooms.shop;rooms["forest-hut"]=rooms.hut;
+  const interiors=Object.fromEntries(Object.entries(buildings).flatMap(([,items])=>items.filter(b=>b.interior).map(b=>[b.id,{...rooms[b.interior],buildingId:b.id,occupantKey:b.interior}])));
   const all = Object.values(buildings).flat();
   window.BuildingSystem = {
     all,
     at: biome => (buildings[biome] || []).map(item => ({...item})),
     get: id => all.find(item => item.id === id) || null,
-    interior: id => interiors[id] ? {...interiors[id]} : null
+    interior: id => interiors[id] ? {...interiors[id],props:interiors[id].props.map(p=>({...p}))} : null
   };
 })();
