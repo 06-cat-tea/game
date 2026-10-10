@@ -30,4 +30,15 @@
     ]
   };
   const interiors = {
-    chapel:{ title:"晨星礼拜堂内室", room:"chapel" }, inn:{ title:"旅店内室", room:"inn" }, guild:{ title:"公会内室", room:"guild" }, tower:{ title:"钟塔内室", room
+    chapel:{ title:"晨星礼拜堂内室", room:"chapel" }, inn:{ title:"旅店内室", room:"inn" }, guild:{ title:"公会内室", room:"guild" }, tower:{ title:"钟塔内室", room:"tower" },
+    market:{ title:"杂货铺内室", room:"shop" }, hut:{ title:"林间小屋内室", room:"hut" }, waystation:{ title:"峡道驿站内室", room:"inn" },
+    forge:{ title:"灰炉锻坊内室", room:"forge" }, lighthouse:{ title:"灯塔内室", room:"tower" }, "fisher-hut":{ title:"渔屋内室", room:"hut" }
+  };
+  const all = Object.values(buildings).flat();
+  window.BuildingSystem = {
+    all,
+    at: biome => (buildings[biome] || []).map(item => ({...item})),
+    get: id => all.find(item => item.id === id) || null,
+    interior: id => interiors[id] ? {...interiors[id]} : null
+  };
+})();
