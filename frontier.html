@@ -18,6 +18,7 @@
         <button data-screen="inventory"><span>▣</span>背包与装备</button>
         <button data-screen="journal"><span>≡</span>任务日志</button>
         <button data-screen="party"><span>♜</span>队伍与职业</button>
+        <button data-screen="crafting"><span>⌘</span>锻造与图纸</button>
         <button data-screen="codex"><span>⌘</span>世界图鉴</button>
         <button data-screen="settings"><span>⚙</span>设置与存档</button>
       </nav>
@@ -29,12 +30,16 @@
       <section class="screen" id="screen-inventory"></section>
       <section class="screen" id="screen-journal"></section>
       <section class="screen" id="screen-party"></section>
+      <section class="screen" id="screen-crafting"></section>
       <section class="screen" id="screen-codex"></section>
       <section class="screen" id="screen-settings"></section>
     </main>
   </div>
   <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true"><div class="modal" id="modalContent"></div></div>
   <div class="toast" id="toast"></div>
+  <script src="js/building-system.js" defer></script>
+  <script src="js/crafting-system.js" defer></script>
+  <script src="js/skill-tree.js" defer></script>
   <script src="js/pixel-world.js" defer></script>
   <script src="js/circle-map.js" defer></script>
   <script src="js/npc-system.js" defer></script>
