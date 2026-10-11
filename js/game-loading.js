@@ -15,6 +15,7 @@
     for(const id of WorldAssets.portraits)add('portraits',id);
     if(room&&!room.procedural)add('expansion',room.sceneId);
     add('emblems','brand');
+    if(window.TitleScreen&&GameUI.getCurrent()==='title')add('url',TitleScreen.artwork);
     for(const id of ['map','backpack','main-quest','character','skills','crafting','achievement','settings','dialogue'])add('url','assets/icons/'+id+'-128.png');
     return [...items.values()];
   }
