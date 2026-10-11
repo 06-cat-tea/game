@@ -6,7 +6,7 @@
     const box = canvas.getBoundingClientRect(), dpr = Math.max(1, window.devicePixelRatio || 1), size = Math.max(180, Math.floor(Math.min(box.width || 260, 260)));
     canvas.width = size * dpr; canvas.height = size * dpr;
     const ctx = canvas.getContext("2d"); ctx.scale(dpr, dpr); ctx.imageSmoothingEnabled = false;
-    const c = size/2, r = size*.43, locs = JSON.parse(canvas.dataset.locations), current = canvas.dataset.current;
+    const c = size/2, r = size*.43, locs = JSON.parse(canvas.dataset.locations), current = canvas.dataset.current, progress=JSON.parse(canvas.dataset.progress||"{}");
     ctx.clearRect(0,0,size,size);
     ctx.save(); ctx.beginPath(); ctx.arc(c,c,r,0,Math.PI*2); ctx.clip();
     ctx.fillStyle="#354d3d"; ctx.fillRect(c-r,c-r,2*r,2*r);
@@ -24,7 +24,7 @@
     for(const [id, name, danger] of locs){const pt=points[id]||[.5,.5], px=c-r+pt[0]*r*2, py=c-r+pt[1]*r*2, active=id===current;
       ctx.fillStyle=active?"#ffe093":"#e8d5a2"; ctx.fillRect(Math.round(px-4),Math.round(py-4),8,8);
       if(active){ctx.strokeStyle="#ffe09399";ctx.lineWidth=2;ctx.beginPath();ctx.arc(px,py,9,0,Math.PI*2);ctx.stroke()}
-      ctx.fillStyle="#fff4d6";ctx.font="10px sans-serif";ctx.textAlign="center";ctx.fillText(name,px,py-8);
+      ctx.fillStyle="#fff4d6";ctx.font="10px sans-serif";ctx.textAlign="center";ctx.fillText(name,px,py-8);ctx.fillStyle="#d6c593";ctx.font="9px sans-serif";ctx.fillText(`${progress[id]||0}%${(progress[id]||0)<100?" · 待探索":""}`,px,py+18);
     }
   }
   window.CircleMap = { draw };
@@ -32,17 +32,12 @@
 })();
 (() => {
   document.body.addEventListener("click", event => {
-    const button = event.target.closest("[data-move]");
-    if (!button || !window.PixelWorld) return;
-    const [x,y] = button.dataset.move.split(",").map(Number);
-    window.PixelWorld.move(x*13,y*9);
-  });
-  document.body.addEventListener("click", event => {
     const canvas = event.target.closest("#circleMap"); if (!canvas) return;
     const rect = canvas.getBoundingClientRect(), c=rect.width/2, r=rect.width*.43, x=event.clientX-rect.left, y=event.clientY-rect.top;
     let nearest=null, distance=Infinity;
     const points={town:[.5,.23],wood:[.22,.38],pass:[.73,.43],fen:[.55,.72],coast:[.19,.69]};
     for(const [id] of JSON.parse(canvas.dataset.locations)){const pt=points[id]||[.5,.5],px=c-r+pt[0]*r*2,py=c-r+pt[1]*r*2,d=Math.hypot(px-x,py-y);if(d<distance){nearest=id;distance=d}}
-    if(distance<24){const target=document.querySelector(`#screen-adventure [data-travel="${nearest}"]`);target?.click()}
+    if(distance<24){window.AshenGame?.travel(nearest)}
   });
 })();
+
