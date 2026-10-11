@@ -41,6 +41,12 @@
     lighthouse:{title:"风葬灯塔内室",room:"tower",description:"狭窄的石塔内盘旋着楼梯，旧灯镜把海面的光斑折成细线。",props:[{id:"lens",name:"旧灯镜",x:6.4,y:2.2,detail:"镜片缺了一角，缺口的方向正指向雾中的无旗船。"},{id:"captain-letter",name:"浸水的信",x:2.3,y:3.3,detail:"信里只剩一句话：若第十三声响起，不要让灯塔熄灭。"}]},
     "fisher-hut":{title:"潮汐渔屋内室",room:"hut",description:"渔网、木桶和潮位刻尺将每日的海况留在了屋内。",props:[{id:"tide-chart",name:"潮位刻尺",x:6.5,y:2.1,detail:"刻度显示潮水曾在午夜倒流，正好露出了沉船祭标。"},{id:"fishing-net",name:"旧渔网",x:2,y:3.2,detail:"网眼里缠着一小片王朝帆布和一枚没有船旗的铜扣。"}]}
   };
+  const expansion=window.WorldContent;
+  for(const [place,list] of Object.entries(expansion.additions)){
+    buildings[place].push(...list.map(b=>({...b,kind:b.asset,h:b.asset==="castle"?170:110})));
+    for(const b of list)rooms[b.interior]={title:b.name+"内室",room:["castle","gate","barracks"].includes(b.asset)?"guild":b.asset==="alchemy"?"hut":b.asset==="demon-fortress"?"forge":b.asset==="sky-city"||b.asset==="academy"?"tower":"inn",description:b.description,props:[{id:"local-record",name:b.name+"记录台",x:2.5,y:2.5,detail:b.description+" 这里留下当地居民的工作与旅行记录。"},{id:"service-desk",name:"服务台",x:6.7,y:2.3,detail:expansion.serviceNames[b.action.replace("world:","")]+"，与此处居民共用相同的行动规则。"}],service:b.action};
+  }
+  for(const list of Object.values(buildings))for(const b of list){b.asset=b.asset||expansion.existingAssets[b.id]||"ruins";b.place=Object.keys(buildings).find(k=>buildings[k].includes(b));}
   rooms.market=rooms.shop;rooms["forest-hut"]=rooms.hut;
   const interiors=Object.fromEntries(Object.entries(buildings).flatMap(([,items])=>items.filter(b=>b.interior).map(b=>[b.id,{...rooms[b.interior],buildingId:b.id,occupantKey:b.interior}])));
   const all = Object.values(buildings).flat();

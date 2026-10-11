@@ -22,9 +22,9 @@
     ctx.restore();
     ctx.strokeStyle="#d1b77a"; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(c,c,r,0,Math.PI*2); ctx.stroke();
     for(const [id, name, danger] of locs){const pt=points[id]||[.5,.5], px=c-r+pt[0]*r*2, py=c-r+pt[1]*r*2, active=id===current;
-      ctx.fillStyle=active?"#ffe093":"#e8d5a2"; ctx.fillRect(Math.round(px-4),Math.round(py-4),8,8);
+      const art=window.WorldAssets.ready("buildings",{town:"castle",wood:"forest",pass:"mine",fen:"ruins",coast:"harbor"}[id]);if(art){ctx.imageSmoothingEnabled=true;ctx.drawImage(art,px-14,py-18,28,28);}else {ctx.fillStyle=active?"#ffe093":"#e8d5a2";ctx.fillRect(Math.round(px-4),Math.round(py-4),8,8);}
       if(active){ctx.strokeStyle="#ffe09399";ctx.lineWidth=2;ctx.beginPath();ctx.arc(px,py,9,0,Math.PI*2);ctx.stroke()}
-      ctx.fillStyle="#fff4d6";ctx.font="10px sans-serif";ctx.textAlign="center";ctx.fillText(name,px,py-8);ctx.fillStyle="#d6c593";ctx.font="9px sans-serif";ctx.fillText(`${progress[id]||0}%${(progress[id]||0)<100?" · 待探索":""}`,px,py+18);
+      ctx.fillStyle="#fff4d6";ctx.font="10px sans-serif";ctx.textAlign="center";ctx.fillText(name,px,py-21);ctx.fillStyle="#d6c593";ctx.font="9px sans-serif";ctx.fillText(`${progress[id]||0}%${(progress[id]||0)<100?" · 待探索":""}`,px,py+18);
     }
   }
   window.CircleMap = { draw };

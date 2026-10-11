@@ -20,6 +20,14 @@
     lighthouse:[{id:"lian",x:4.4,y:3.4}],
     "fisher-hut":[{id:"ferryman",name:"阿沧",role:"潮汐渔人",portrait:"沧",color:"#6b9da3",line:"潮水退下去的时候，礁石会露出新的东西。只是别把海雾里的灯当成岸。",quest:"海岸见闻",task:"渔网、潮汐和沉船都有自己的记号。",service:"fish",x:4.4,y:3.2}]
   };
-  const indoorIndex=Object.values(occupants).flat().reduce((out,n)=>{out[n.id]=n;return out;},{});
+  const expansion=window.WorldContent;
+  for(const[id,n]of Object.entries(records))n.type=expansion.oldTypes[id]||"villager";
+  for(const list of Object.values(occupants))for(const n of list)n.type=expansion.oldTypes[n.id]||"villager";
+  for(const[id,n]of Object.entries(expansion.residents)){
+    records[id]={...n,portrait:n.name.slice(0,1),color:({knight:"#b6bdcf",noble:"#956489",bard:"#bf7560",mage:"#a48ecb",beastfolk:"#779078",orc:"#9a9871",skeleton:"#b4b4a2",demon:"#9c759e"})[n.type]||"#8da4a1"};
+    if(!occupants[n.home])occupants[n.home]=[];
+    occupants[n.home].push({id,type:n.type,x:occupants[n.home].length?6.5:4.4,y:occupants[n.home].length?4.5:3.2});
+  }
+  const indoorIndex=Object.values(occupants).flat().reduce((out,n)=>{out[n.id]={...records[n.id],...n};return out;},{});
   window.NPCSystem={all:records,indoor:indoorIndex,at:place=>Object.entries(records).filter(([,n])=>n.place===place).map(([id,n])=>({id,...n})),inside:id=>(occupants[id]||[]).map(n=>({...records[n.id],...n,id:n.id}))};
 })();
