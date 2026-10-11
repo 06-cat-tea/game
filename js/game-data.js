@@ -60,5 +60,6 @@
     };
 
 Object.assign(ITEMS,window.RegionContent.items);
+PLACES.city={name:'归灯王城',region:'归灯王都',danger:0,tags:['九街区','公共建筑','城市生活'],art:'归灯王城',desc:'宫庭、书苑、匠街与河港以石路相连。街坊在归灯下重新讲述这座城市的生活，每一扇门后都有自己的名字。',actions:[['city:guide','街区导览','查看九街区与公共建筑。'],['city:archive','城市档案','阅读王城地方沿革。'],['city:music','水园小调','聆听居民演奏。']]};
 window.GameData={SLOT,RARITY,ITEMS,PLACES,ENEMIES,QUESTS,COMPANIONS,JOBS,SKILLS,RECIPES,EVENTS};
 })();

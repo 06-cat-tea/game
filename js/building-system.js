@@ -46,6 +46,7 @@
     buildings[place].push(...list.map(b=>({...b,kind:b.asset,h:b.asset==="castle"?170:110})));
     for(const b of list)rooms[b.interior]={title:b.name+"内室",room:["castle","gate","barracks"].includes(b.asset)?"guild":b.asset==="alchemy"?"hut":b.asset==="demon-fortress"?"forge":b.asset==="sky-city"||b.asset==="academy"?"tower":"inn",description:b.description,props:[{id:"local-record",name:b.name+"记录台",x:2.5,y:2.5,detail:b.description+" 这里留下当地居民的工作与旅行记录。"},{id:"service-desk",name:"服务台",x:6.7,y:2.3,detail:expansion.serviceNames[b.action.replace("world:","")]+"，与此处居民共用相同的行动规则。"}],service:b.action};
   }
+  buildings.city=window.RoyalCity.buildings;Object.assign(rooms,window.RoyalCity.rooms);
   for(const list of Object.values(buildings))for(const b of list){b.asset=b.asset||expansion.existingAssets[b.id]||"ruins";b.place=Object.keys(buildings).find(k=>buildings[k].includes(b));}
   rooms.market=rooms.shop;rooms["forest-hut"]=rooms.hut;
   const interiors=Object.fromEntries(Object.entries(buildings).flatMap(([,items])=>items.filter(b=>b.interior).map(b=>[b.id,{...rooms[b.interior],buildingId:b.id,occupantKey:b.interior}])));

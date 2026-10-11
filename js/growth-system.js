@@ -17,7 +17,8 @@
   function syncBonds(s){for(const id in s.relationships)s.party.bonds[id]=Math.floor(s.relationships[id].value/20);}
   function addAffinity(s,id,n){if(!s.relationships[id])return; s.relationships[id].value=clamp(s.relationships[id].value+n,0,100);syncBonds(s);}
   function chat(s,id){const r=s.relationships[id];if(!r)return false;if(r.chatDay===s.day)return false;r.chatDay=s.day;addAffinity(s,id,4);return true;}
-  function gift(s,id){const r=s.relationships[id];if(!r)return "未结识这位居民。";if(r.giftDay===s.day)return "今天已经赠送过礼物。";const mat=id==="forge-master"||id==="toren"?"ore":id==="mira"||id==="eira"?"shard":"herb";if(s.inventory.materials[mat]<1)return `缺少${{ore:"矿石",herb:"草药",shard:"星屑"}[mat]} 1 份。`;s.inventory.materials[mat]--;r.giftDay=s.day;addAffinity(s,id,6);return "";}
+  const giftMaterial=id=>id==="forge-master"||id==="toren"?"ore":id==="mira"||id==="eira"?"shard":"herb";
+  function gift(s,id){const r=s.relationships[id];if(!r)return "未结识这位居民。";if(r.giftDay===s.day)return "今天已经赠送过礼物。";const mat=giftMaterial(id);if(s.inventory.materials[mat]<1)return `缺少${{ore:"矿石",herb:"草药",shard:"星屑"}[mat]} 1 份。`;s.inventory.materials[mat]--;r.giftDay=s.day;addAffinity(s,id,6);return "";}
   function bonus(s,id,item){const level=s.enhancements[id]||0;if(!level)return {...item.stats};return {...item.stats,...(item.slot==="weapon"?{atk:(item.stats.atk||0)+level*2}:item.slot==="armor"?{def:(item.stats.def||0)+level,hp:(item.stats.hp||0)+level*4}:{mana:(item.stats.mana||0)+level*4})};}
   function missing(s,id){const c=costs[s.enhancements[id]||0];if(!c)return ["已达到 +3 上限"];return Object.entries(c).filter(([k,n])=>(k==="gold"?s.player.gold:s.inventory.materials[k])<n).map(([k,n])=>`${{ore:"矿石",shard:"星屑",gold:"金币"}[k]}缺少 ${n-(k==="gold"?s.player.gold:s.inventory.materials[k])}`);}
   function enhance(s,id){if(!s.inventory.owned.includes(id))return "未拥有该装备。";const lack=missing(s,id);if(lack.length)return lack.join("、");const c=costs[s.enhancements[id]||0];for(const [k,n]of Object.entries(c))if(k==="gold")s.player.gold-=n;else s.inventory.materials[k]-=n;s.enhancements[id]=(s.enhancements[id]||0)+1;return "";}
@@ -55,5 +56,5 @@
     "forge-master":["师父告诉我，铁冷下来后会记住每一次敲击。所以我从不用怒气下锤。","砧台的星形凹痕和矿脉的信匣是同一位工匠做的。"],
     ferryman:["以前我也想出海。后来发现，守着一张好网，也能把远处的消息带回来。","潮位刻尺上那道反向的刻痕，与海雾的三声钟总在同一晚出现。"]
   };
-  window.GrowthSystem={normalize,addAffinity,chat,gift,bonus,missing,enhance,costs,discover,achievements,updateAchievements,claim,npcs,stories};
+  window.GrowthSystem={normalize,addAffinity,chat,gift,giftMaterial,bonus,missing,enhance,costs,discover,achievements,updateAchievements,claim,npcs,stories};
 })();

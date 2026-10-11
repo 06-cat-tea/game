@@ -42,12 +42,20 @@
   };
   const oldTypes={mira:"mage",pella:"elder",sylvi:"archer",toren:"soldier",eira:"priest",lian:"hero",innkeeper:"innkeeper","guild-clerk":"quest-giver",shopkeeper:"merchant","forge-master":"blacksmith",ferryman:"villager"};
   const serviceNames={"royal-record":"查阅王室档案","song":"聆听归途歌","study":"研究星路","brew":"调配药剂 · 草药 2","supplies":"购买干粮 · 8 金币","drill":"守卫训练","harvest":"收获银麦","herb-trade":"购买草药 · 10 金币","ore-trade":"购买矿石 · 12 金币","route":"标记秘密小路","truce":"签订停战书","archive":"整理无眠档案","harbor-trade":"购买航海补给 · 10 金币"};
+  function serviceInfo(s,id){
+    const key=id.replace("world:",""),one=["royal-record","route","truce"].includes(key),daily=["song","study","drill","harvest","archive"].includes(key),flag="world-service:"+key+":"+s.place;
+    const cost={...({brew:{herb:2},supplies:{gold:8},"herb-trade":{gold:10},"ore-trade":{gold:12},"harbor-trade":{gold:10}}[key]||{})};
+    const discount=!!cost.gold&&Object.entries(residents).some(([npc,n])=>n.place===s.place&&n.service===id&&s.relationships[npc]?.value>=60);
+    if(discount)cost.gold=Math.floor(cost.gold*.9);
+    const reason=!serviceNames[key]?"未知的地区服务。":one&&s.flags[flag]?"已完成 · 仅限一次":daily&&s.flags[flag]===s.day?"今日已使用 · 每日一次":Object.entries(cost).some(([m,n])=>(m==="gold"?s.player.gold:s.inventory.materials[m])<n)?"材料或金币不足。":"";
+    const description=({"royal-record":"知识 +1、星屑 +1、经验 +25",song:"恢复法力 20",study:"经验 +15、恢复法力 8",brew:"药剂 +1",supplies:"补给 +2",drill:"经验 +20、恢复生命 8",harvest:"补给 +1、草药 +1","herb-trade":"草药 +2","ore-trade":"矿石 +2",route:"声望 +1、经验 +25",truce:"信任 +1、星屑 +1、经验 +25",archive:"经验 +15、恢复法力 8","harbor-trade":"补给 +1、草药 +1"})[key]||"";
+    return {key,one,daily,flag,cost,discount,reason,available:!reason,name:serviceNames[key]?.split(" · ")[0]||"居民服务",description:description+(key==="brew"&&s.relationships.alchemist?.value>=60&&s.flags["alchemy-bonus"]!==s.day?" · 今日首次额外赠送药剂 +1":"")};
+  }
   function service(s,id,h){
     const key=id.replace("world:",""),one=["royal-record","route","truce"].includes(key),daily=["song","study","drill","harvest","archive"].includes(key),flag="world-service:"+key+":"+s.place;
     if(one&&s.flags[flag]||daily&&s.flags[flag]===s.day)return "这项行动已完成。";
     if(!serviceNames[key])return "未知的地区服务。";
-    const cost={...({brew:{herb:2},supplies:{gold:8},"herb-trade":{gold:10},"ore-trade":{gold:12},"harbor-trade":{gold:10}}[key]||{})};
-    if(cost.gold&&Object.entries(residents).some(([npc,n])=>n.place===s.place&&n.service===id&&s.relationships[npc]?.value>=60))cost.gold=Math.floor(cost.gold*.9);
+    const cost=serviceInfo(s,id).cost;
     if(Object.entries(cost).some(([m,n])=>(m==="gold"?s.player.gold:s.inventory.materials[m])<n))return "材料或金币不足。";
     for(const[m,n]of Object.entries(cost))if(m==="gold")s.player.gold-=n;else s.inventory.materials[m]-=n;
     const st=h.stats(s);
@@ -65,5 +73,6 @@
     if(one||daily)s.flags[flag]=one?true:s.day;
     h.levelUp(s);h.log(s,serviceNames[key]+"：行动完成，收益已收入旅途记录。");return "";
   }
-  window.WorldContent={additions,existingAssets,residents,oldTypes,serviceNames,service,grid:{columns:28,rows:20}};
+  Object.assign(residents,window.RoyalCity.residents);
+  window.WorldContent={additions,existingAssets,residents,oldTypes,serviceNames,serviceInfo,service,grid:{columns:64,rows:48},legacyGrid:{columns:28,rows:20}};
 })();

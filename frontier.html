@@ -7,27 +7,14 @@
   <title>灰烬边境：星陨纪事</title>
   <link rel="icon" type="image/svg+xml" href="assets/expansion/icons/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/expansion/icons/favicon-32.png">
-  <link rel="stylesheet" href="assets/game.css?v=6.0"><link rel="stylesheet" href="assets/expansion.css?v=6.0">
+  <link rel="stylesheet" href="assets/game.css?v=6.3"><link rel="stylesheet" href="assets/expansion.css?v=6.3">
+  <link rel="stylesheet" href="assets/hud.css?v=6.3">
 </head>
 <body>
-  <div class="app">
-    <aside class="rail">
-      <div class="brand"><img class="brand-symbol" src="assets/expansion/icons/brand.png" alt=""><div class="brand-mark">ASHEN MARCH <span>·</span> CHRONICLES</div><h1>灰烬边境</h1><p>王国的地图尚未画完。每一步都可能改写边境的传说。</p></div>
-      <div class="portrait" id="characterCard"></div>
-      <div class="currency" id="currency"></div>
-      <nav class="nav" id="nav">
-        <button data-screen="adventure"><img class="ui-icon" src="assets/icons/exploration-128.png" alt="">冒险</button>
-        <button data-screen="inventory"><img class="ui-icon" src="assets/icons/backpack-128.png" alt="">背包与装备</button>
-        <button data-screen="journal"><img class="ui-icon" src="assets/icons/main-quest-128.png" alt="">任务日志</button>
-        <button data-screen="party"><img class="ui-icon" src="assets/icons/character-128.png" alt="">成长与队伍</button>
-        <button data-screen="crafting"><img class="ui-icon" src="assets/icons/crafting-128.png" alt="">锻造工坊</button>
-        <button data-screen="codex"><img class="ui-icon" src="assets/icons/map-128.png" alt="">世界记录</button>
-        <button data-screen="settings"><img class="ui-icon" src="assets/icons/settings-128.png" alt="">设置与存档</button>
-      </nav>
-      <div class="rail-foot"><button class="quiet-btn" data-action="rest">在营地休息</button><button class="quiet-btn" data-action="potion">快速使用药剂</button></div>
-    </aside>
-    <main class="main">
-      <header class="topline"><div class="crumb"><span>灰烬纪元 / </span><b id="crumb">冒险</b></div><div class="top-actions"><span class="tag" id="clock">第 1 日 · 清晨</span><button class="icon-btn" data-command="save"><img class="ui-icon" src="assets/icons/save-128.png" alt="">保存</button><button class="icon-btn" data-screen="more" aria-label="更多功能">⋯</button></div></header>
+  <main id="gameViewport" aria-label="灰烬边境游戏画面">
+    <div id="worldStage" class="pixel-scene"><canvas id="pixelWorld" width="1920" height="1080" data-biome="town" tabindex="0" aria-label="边境等距场景"></canvas></div>
+    <div id="hudLayer"></div>
+    <div id="panelLayer"><div class="app"><section class="main"><button class="panel-close" data-screen="adventure" aria-label="关闭功能面板">×</button>
       <section class="screen active" id="screen-adventure"></section>
       <section class="screen" id="screen-inventory"></section>
       <section class="screen" id="screen-journal"></section>
@@ -37,46 +24,43 @@
       <section class="screen" id="screen-settings"></section>
       <section class="screen" id="screen-more"></section>
       <section class="screen" id="screen-title"></section>
-    </main>
-  </div>
-  <nav class="mobile-nav" aria-label="手机主导航">
-    <button data-screen="adventure"><img class="ui-icon" src="assets/icons/exploration-128.png" alt="">冒险</button>
-    <button data-screen="inventory"><img class="ui-icon" src="assets/icons/backpack-128.png" alt="">背包</button>
-    <button data-screen="journal"><img class="ui-icon" src="assets/icons/main-quest-128.png" alt="">任务</button>
-    <button data-screen="party"><img class="ui-icon" src="assets/icons/character-128.png" alt="">成长</button>
-    <button data-screen="more"><img class="ui-icon" src="assets/icons/settings-128.png" alt="">更多</button>
-  </nav>
-  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true"><div class="modal" id="modalContent"></div></div>
-  <div class="toast" id="toast"></div>
-  <script src="js/world-content.js?v=6.0" defer></script>
-  <script src="js/world-hit-masks.js?v=6.0" defer></script>
-  <script src="js/world-assets.js?v=6.0" defer></script>
-  <script src="js/building-system.js?v=6.0" defer></script>
-  <script src="js/crafting-system.js?v=6.0" defer></script>
-  <script src="js/skill-tree.js?v=6.0" defer></script>
-  <script src="js/class-content.js?v=6.0" defer></script>
-  <script src="js/npc-system.js?v=6.0" defer></script>
-  <script src="js/growth-system.js?v=6.0" defer></script>
-  <script src="js/region-content.js?v=6.0" defer></script>
-  <script src="js/game-data.js?v=6.0" defer></script>
-  <script src="js/party-system.js?v=6.0" defer></script>
-  <script src="js/scene-layouts.js?v=6.0" defer></script>
-  <script src="js/scene-system.js?v=6.0" defer></script>
-  <script src="js/expedition-stories.js?v=6.0" defer></script>
-  <script src="js/pixel-world.js?v=6.0" defer></script>
-  <script src="js/circle-map.js?v=6.0" defer></script>
-  <script src="js/ui-icons.js?v=6.0" defer></script>
-  <script src="js/ui-navigation.js?v=6.0" defer></script>
-  <script src="js/interaction-menu.js?v=6.0" defer></script>
-  <script src="js/battle-system.js?v=6.0" defer></script>
-  <script src="js/battle-ui.js?v=6.0" defer></script>
-  <script src="js/scene-controller.js?v=6.0" defer></script>
-  <script src="js/expansion-ui.js?v=6.0" defer></script>
-  <script src="js/save-migrations.js?v=6.0" defer></script>
-  <script src="js/game.js?v=6.0" defer></script>
+    </section></div></div>
+    <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true"><div class="modal" id="modalContent"></div></div>
+    <div class="toast" id="toast"></div>
+  </main>
+  <script src="js/game-viewport.js?v=6.3" defer></script>
+  <script src="js/city-content.js?v=6.3" defer></script>
+  <script src="js/world-regions.js?v=6.3" defer></script>
+  <script src="js/world-content.js?v=6.3" defer></script>
+  <script src="js/world-hit-masks.js?v=6.3" defer></script>
+  <script src="js/world-assets.js?v=6.3" defer></script>
+  <script src="js/building-system.js?v=6.3" defer></script>
+  <script src="js/crafting-system.js?v=6.3" defer></script>
+  <script src="js/skill-tree.js?v=6.3" defer></script>
+  <script src="js/class-content.js?v=6.3" defer></script>
+  <script src="js/npc-system.js?v=6.3" defer></script>
+  <script src="js/growth-system.js?v=6.3" defer></script>
+  <script src="js/region-content.js?v=6.3" defer></script>
+  <script src="js/game-data.js?v=6.3" defer></script>
+  <script src="js/party-system.js?v=6.3" defer></script>
+  <script src="js/scene-layouts.js?v=6.3" defer></script>
+  <script src="js/scene-system.js?v=6.3" defer></script>
+  <script src="js/expedition-stories.js?v=6.3" defer></script>
+  <script src="js/city-renderer.js?v=6.3" defer></script>
+  <script src="js/world-terrain.js?v=6.3" defer></script>
+  <script src="js/pixel-world.js?v=6.3" defer></script>
+  <script src="js/circle-map.js?v=6.3" defer></script>
+  <script src="js/ui-icons.js?v=6.3" defer></script>
+  <script src="js/ui-navigation.js?v=6.3" defer></script>
+  <script src="js/interaction-menu.js?v=6.3" defer></script>
+  <script src="js/battle-system.js?v=6.3" defer></script>
+  <script src="js/battle-ui.js?v=6.3" defer></script>
+  <script src="js/scene-controller.js?v=6.3" defer></script>
+  <script src="js/expansion-ui.js?v=6.3" defer></script>
+  <script src="js/save-migrations.js?v=6.3" defer></script>
+  <script src="js/dialogue-content.js?v=6.3" defer></script>
+  <script src="js/dialogue-system.js?v=6.3" defer></script>
+  <script src="js/game-hud.js?v=6.3" defer></script>
+  <script src="js/game.js?v=6.3" defer></script>
 </body>
 </html>
-
-
-
-
