@@ -9,9 +9,21 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/expansion/icons/favicon-32.png">
   <link rel="stylesheet" href="assets/game.css?v=6.3"><link rel="stylesheet" href="assets/expansion.css?v=6.3">
   <link rel="stylesheet" href="assets/hud.css?v=6.3">
+  <link rel="stylesheet" href="assets/loading.css?v=6.6">
+  <link rel="preload" as="image" href="assets/loading/returning-light.webp" fetchpriority="high">
 </head>
 <body>
   <main id="gameViewport" aria-label="灰烬边境游戏画面">
+    <section id="gameLoading" tabindex="-1" aria-label="场景加载" aria-busy="true">
+      <div class="loading-content">
+        <div class="loading-kicker">灰烬边境 · 星陨纪事</div>
+        <h1>循光赴远境</h1><p class="loading-destination">归灯尚明，远境将启</p>
+        <div class="loading-track" role="progressbar" aria-label="地图加载进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+        <div class="loading-meta"><p class="loading-status" role="status" aria-live="polite">正在唤醒这片远境…</p><span class="loading-percent" aria-hidden="true">0%</span></div>
+        <div class="loading-actions" hidden><button data-loading-retry>重新加载</button><button data-loading-fallback>暂用简化画面</button></div>
+        <p class="loading-tip">灯火照亮来路，也指引下一段旅程。</p>
+      </div>
+    </section>
     <div id="worldStage" class="pixel-scene"><canvas id="pixelWorld" width="1920" height="1080" data-biome="town" tabindex="0" aria-label="边境等距场景"></canvas></div>
     <div id="hudLayer"></div>
     <div id="panelLayer"><div class="app"><section class="main"><button class="panel-close" data-screen="adventure" aria-label="关闭功能面板">×</button>
@@ -33,7 +45,7 @@
   <script src="js/world-regions.js?v=6.3" defer></script>
   <script src="js/world-content.js?v=6.3" defer></script>
   <script src="js/world-hit-masks.js?v=6.3" defer></script>
-  <script src="js/world-assets.js?v=6.5" defer></script>
+  <script src="js/world-assets.js?v=6.6" defer></script>
   <script src="js/building-system.js?v=6.3" defer></script>
   <script src="js/crafting-system.js?v=6.3" defer></script>
   <script src="js/skill-tree.js?v=6.3" defer></script>
@@ -47,10 +59,10 @@
   <script src="js/scene-system.js?v=6.3" defer></script>
   <script src="js/expedition-stories.js?v=6.3" defer></script>
   <script src="js/city-renderer.js?v=6.3" defer></script>
-  <script src="js/world-terrain.js?v=6.5" defer></script>
+  <script src="js/world-terrain.js?v=6.6" defer></script>
   <script src="js/environment-catalog.js?v=6.4" defer></script>
   <script src="js/environment-system.js?v=6.5" defer></script>
-  <script src="js/pixel-world.js?v=6.5" defer></script>
+  <script src="js/pixel-world.js?v=6.6" defer></script>
   <script src="js/circle-map.js?v=6.5" defer></script>
   <script src="js/ui-icons.js?v=6.3" defer></script>
   <script src="js/ui-navigation.js?v=6.3" defer></script>
@@ -62,7 +74,8 @@
   <script src="js/save-migrations.js?v=6.3" defer></script>
   <script src="js/dialogue-content.js?v=6.3" defer></script>
   <script src="js/dialogue-system.js?v=6.3" defer></script>
-  <script src="js/game-hud.js?v=6.3" defer></script>
-  <script src="js/game.js?v=6.3" defer></script>
+  <script src="js/game-hud.js?v=6.6" defer></script>
+  <script src="js/game-loading.js?v=6.6" defer></script>
+  <script src="js/game.js?v=6.6" defer></script>
 </body>
 </html>

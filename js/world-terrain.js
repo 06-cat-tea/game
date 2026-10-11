@@ -62,5 +62,6 @@
   function invalidate(){cache.clear();textures.clear();thumbnails.clear();revision++;}
   const scenery={};
   function decorations(place){if(place==='city')return[];if(scenery[place])return scenery[place];const list=[];for(let i=0;i<105;i++){const x=3+(i*17)%58,y=3+(i*13)%42;if(x<28&&y<20||Math.abs(x-32)<3||Math.abs(y-12)<3||Math.abs(y-32)<3)continue;list.push({kind:place==='pass'?'rock':place==='town'&&i%3===0?'lamp':place==='coast'&&i%3!==0?'rock':'tree',x,y,variant:i});}scenery[place]=list;return list;}
-  window.WorldTerrain={draw,cache,decorations,invalidate,thumbnail,texture,get revision(){return revision;}};
+  function resourceIds(place){const t=themes[place]||themes.town;return [t.ground,t.road,...(place==='city'?['royal-01-marble','royal-03-brick','water-03-clear-pool']:[])];}
+  window.WorldTerrain={draw,cache,decorations,invalidate,thumbnail,texture,resourceIds,get revision(){return revision;}};
 })();

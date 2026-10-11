@@ -1,3 +1,4 @@
+const sceneReady=require('./scene-ready.cjs');
 // Isolated desktop/touch contexts. Run with file:// (default) or a static-service URL.
 const fs=require('fs'),path=require('path'),assert=require('assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));
@@ -5,7 +6,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
 (async()=>{
   const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true}),passed=[],errors=[];
   const test=async(name,fn)=>{await fn();passed.push(name);console.log('PASS '+name);};
-  const create=async(width,height,touch)=>{const c=await browser.newContext({viewport:{width,height},hasTouch:touch,isMobile:touch}),p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await p.goto(url);await p.locator('[data-command=continue]').click();await p.waitForFunction(()=>PixelWorld.assetDiagnostics().scene);return {c,p};};
+  const create=async(width,height,touch)=>{const c=await browser.newContext({viewport:{width,height},hasTouch:touch,isMobile:touch}),p=await c.newPage();sceneReady(p);p.on('pageerror',e=>errors.push(e.message));p.on('console',m=>{if(m.type()==='error')errors.push(m.text());});await p.goto(url);await p.locator('[data-command=continue]').click();await p.waitForFunction(()=>PixelWorld.assetDiagnostics().scene);return {c,p};};
   const seed=async(p,fn)=>{const s=await p.evaluate(()=>AshenGame.getState());fn(s);await p.evaluate(s=>{localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');},s);};
   const bounds=async(p,selector)=>p.evaluate(selector=>{const size=GameViewport.size();return [...document.querySelectorAll(selector)].filter(e=>e.getClientRects().length&&!e.hidden&&getComputedStyle(e).visibility!=='hidden'&&getComputedStyle(e).display!=='none').map(e=>({label:e.ariaLabel||e.textContent,r:GameViewport.localRect(e),size}));},selector);
   const fit=rows=>{for(const {label,r,size} of rows){assert(r.x>=-1&&r.y>=-1&&r.x+r.width<=size.width+1&&r.y+r.height<=size.height+1,JSON.stringify({label,r,size}));assert(r.width>=43.9&&r.height>=43.9,JSON.stringify({label,r}));}};

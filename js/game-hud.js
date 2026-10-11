@@ -4,7 +4,7 @@
   const esc=s=>window.GameUI.esc(s),I=k=>window.UIIcons.icon(k);
   const entries=[['地图','map','codex','map'],['背包','backpack','inventory'],['任务','main-quest','journal'],['队伍','character','party','companions'],['技能','skills','party','skills'],['制作','crafting','crafting','craft'],['记录','achievement','codex','achievements'],['设置','settings','settings']];
   const root=()=>document.querySelector('#gameViewport');
-  function blocked(){return panel||!!document.querySelector('#modal.open,.context-menu,.quick-wheel')||ctx?.getState().battle;}
+  function blocked(){return window.GameLoading?.blocked()||panel||!!document.querySelector('#modal.open,.context-menu,.quick-wheel')||ctx?.getState().battle;}
   function render(s,st,hint,open){
     const wasOpen=panel;if(open&&!wasOpen)panelReturnFocus=document.activeElement;
     panel=open;root().classList.toggle('panel-open',open);root().classList.toggle('at-title',window.GameUI?.getCurrent()==='title');
@@ -15,7 +15,7 @@
   function updateLocation(s){if(s.place==='city'&&!s.location.sceneId){const d=RoyalCity.current(s.location.x,s.location.y),name=document.querySelector('.hud-location b'),hint=document.querySelector('.hud-quest');if(name)name.textContent='归灯王城 · '+d.name;if(hint)hint.textContent=d.description;}window.CircleMap?.draw();}
   function closeWheel(){const open=!!wheel;wheel?.remove();wheel=null;selected=-1;heldTab=false;if(open){window.PixelWorld.clearInput();(returnFocus?.isConnected?returnFocus:document.querySelector('#pixelWorld'))?.focus({preventScroll:true});}returnFocus=null;}
   function openWheel(held=false){
-    if(!ctx||panel||document.querySelector('#modal.open,.context-menu')||ctx.getState().battle)return false;
+    if(window.GameLoading?.blocked()||!ctx||panel||document.querySelector('#modal.open,.context-menu')||ctx.getState().battle)return false;
     closeWheel();returnFocus=document.activeElement;window.PixelWorld.clearInput();heldTab=held;
     wheel=document.createElement('div');wheel.className='quick-wheel';wheel.setAttribute('role','dialog');wheel.setAttribute('aria-label','快捷轮盘');
     const mobile=window.GameViewport.isTouch();wheel.dataset.mobile=String(mobile);
