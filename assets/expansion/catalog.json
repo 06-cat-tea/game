@@ -1,0 +1,410 @@
+{
+  "tool": "imagegen",
+  "assets": [
+    {
+      "id": "room-chapel",
+      "name": "晨星礼拜堂",
+      "description": "石砌礼拜堂，星形祭台、长烛、彩绘玻璃、木祷告席和祷告簿",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 晨星礼拜堂: 石砌礼拜堂，星形祭台、长烛、彩绘玻璃、木祷告席和祷告簿. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-chapel.png",
+      "file": "scenes/room-chapel.webp"
+    },
+    {
+      "id": "room-inn",
+      "name": "晨星旅店",
+      "description": "温暖旅店，石壁炉、长桌、旅客名册、吧台、木梁与旅行行囊",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 晨星旅店: 温暖旅店，石壁炉、长桌、旅客名册、吧台、木梁与旅行行囊. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-inn.png",
+      "file": "scenes/room-inn.webp"
+    },
+    {
+      "id": "room-guildhall",
+      "name": "边境公会",
+      "description": "公会大厅，委托板、边境地图桌、盾牌陈列与卷轴柜",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 边境公会: 公会大厅，委托板、边境地图桌、盾牌陈列与卷轴柜. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-guildhall.png",
+      "file": "scenes/room-guildhall.webp"
+    },
+    {
+      "id": "room-clocktower",
+      "name": "晨星钟塔",
+      "description": "钟塔机芯室，铜齿轮、星盘、长望远镜与十三槽星图台",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 晨星钟塔: 钟塔机芯室，铜齿轮、星盘、长望远镜与十三槽星图台. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-clocktower.png",
+      "file": "scenes/room-clocktower.webp"
+    },
+    {
+      "id": "room-royal-hall",
+      "name": "归灯王城",
+      "description": "王城接待厅，磨损王座、金边地毯、王朝家谱、银印与长窗",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 归灯王城: 王城接待厅，磨损王座、金边地毯、王朝家谱、银印与长窗. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-royal-hall.png",
+      "file": "scenes/room-royal-hall.webp"
+    },
+    {
+      "id": "room-market",
+      "name": "行省杂货铺",
+      "description": "杂货店，整齐的药瓶货架、干粮、账簿、木柜台与铜钥匙",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 行省杂货铺: 杂货店，整齐的药瓶货架、干粮、账簿、木柜台与铜钥匙. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-market.png",
+      "file": "scenes/room-market.webp"
+    },
+    {
+      "id": "room-star-academy",
+      "name": "星环学院",
+      "description": "星术学院教室，星空穹顶、书架、玻璃天球、课桌与符文黑板",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 星环学院: 星术学院教室，星空穹顶、书架、玻璃天球、课桌与符文黑板. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-star-academy.png",
+      "file": "scenes/room-star-academy.webp"
+    },
+    {
+      "id": "room-artisan-quarter",
+      "name": "蓝瓦街区",
+      "description": "蓝瓦街区的公共工匠厅，彩色布料、木雕、乐器、壁画和喷泉窗景",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 蓝瓦街区: 蓝瓦街区的公共工匠厅，彩色布料、木雕、乐器、壁画和喷泉窗景. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-artisan-quarter.png",
+      "file": "scenes/room-artisan-quarter.webp"
+    },
+    {
+      "id": "room-alchemist-lab",
+      "name": "青瓶炼金室",
+      "description": "炼金实验室，玻璃蒸馏器、青蓝药液、药草、铜管与试剂柜",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 青瓶炼金室: 炼金实验室，玻璃蒸馏器、青蓝药液、药草、铜管与试剂柜. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-alchemist-lab.png",
+      "file": "scenes/room-alchemist-lab.webp"
+    },
+    {
+      "id": "room-north-gate",
+      "name": "晨星北门",
+      "description": "城门守卫室，箭孔、值勤簿、训练盾、钥匙架、城门绞盘",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 晨星北门: 城门守卫室，箭孔、值勤簿、训练盾、钥匙架、城门绞盘. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-north-gate.png",
+      "file": "scenes/room-north-gate.webp"
+    },
+    {
+      "id": "room-town-stables",
+      "name": "北路马厩",
+      "description": "马厩内部，木隔栏、干草、马具、饮水槽、缰绳与饲料袋",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 北路马厩: 马厩内部，木隔栏、干草、马具、饮水槽、缰绳与饲料袋. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-town-stables.png",
+      "file": "scenes/room-town-stables.webp"
+    },
+    {
+      "id": "room-forest-hut",
+      "name": "林间小屋",
+      "description": "森林药师木屋，干燥草束、药箱、窗外树根、野外手记与药圃",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 林间小屋: 森林药师木屋，干燥草束、药箱、窗外树根、野外手记与药圃. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-forest-hut.png",
+      "file": "scenes/room-forest-hut.webp"
+    },
+    {
+      "id": "room-windmill-farm",
+      "name": "银麦风车田",
+      "description": "风车磨坊，巨大木齿轮、磨盘、麦袋、面粉、农具和日光窗",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 银麦风车田: 风车磨坊，巨大木齿轮、磨盘、麦袋、面粉、农具和日光窗. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-windmill-farm.png",
+      "file": "scenes/room-windmill-farm.webp"
+    },
+    {
+      "id": "room-waystation",
+      "name": "峡道驿站",
+      "description": "峡道驿站，行军铺位、路线板、矿车零件、旅行装备与炉火",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 峡道驿站: 峡道驿站，行军铺位、路线板、矿车零件、旅行装备与炉火. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-waystation.png",
+      "file": "scenes/room-waystation.webp"
+    },
+    {
+      "id": "room-grayforge",
+      "name": "灰炉锻坊",
+      "description": "灰炉锻坊，明亮熔炉、星铁砧、冷却槽、工具墙与半成品铠甲",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 灰炉锻坊: 灰炉锻坊，明亮熔炉、星铁砧、冷却槽、工具墙与半成品铠甲. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-grayforge.png",
+      "file": "scenes/room-grayforge.webp"
+    },
+    {
+      "id": "room-ridge-barracks",
+      "name": "灰盾兵营",
+      "description": "灰盾兵营，整齐床铺、盾架、战术沙盘、旗帜和训练装备",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 灰盾兵营: 灰盾兵营，整齐床铺、盾架、战术沙盘、旗帜和训练装备. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-ridge-barracks.png",
+      "file": "scenes/room-ridge-barracks.webp"
+    },
+    {
+      "id": "room-deep-mine",
+      "name": "玄铁矿场",
+      "description": "玄铁矿场工作厅，矿脉、选矿台、木支撑、矿灯、轨道与铁镐",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 玄铁矿场: 玄铁矿场工作厅，矿脉、选矿台、木支撑、矿灯、轨道与铁镐. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-deep-mine.png",
+      "file": "scenes/room-deep-mine.webp"
+    },
+    {
+      "id": "room-ember-fortress",
+      "name": "熔火旧堡",
+      "description": "熔火旧堡议事厅，黑曜石长桌、停战卷轴、红色火盆、破旗与石柱",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 熔火旧堡: 熔火旧堡议事厅，黑曜石长桌、停战卷轴、红色火盆、破旗与石柱. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-ember-fortress.png",
+      "file": "scenes/room-ember-fortress.webp"
+    },
+    {
+      "id": "room-violet-rift",
+      "name": "紫晶地牢",
+      "description": "紫晶地牢档案室，紫水晶、古老书架、无眠档案和锁链",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 紫晶地牢: 紫晶地牢档案室，紫水晶、古老书架、无眠档案和锁链. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-violet-rift.png",
+      "file": "scenes/room-violet-rift.webp"
+    },
+    {
+      "id": "room-cloud-observatory",
+      "name": "云上观星城",
+      "description": "云上观星城大厅，星路仪、天球、蓝金拱门、书桌和云海窗景",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 云上观星城: 云上观星城大厅，星路仪、天球、蓝金拱门、书桌和云海窗景. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-cloud-observatory.png",
+      "file": "scenes/room-cloud-observatory.webp"
+    },
+    {
+      "id": "room-lighthouse",
+      "name": "风葬灯塔",
+      "description": "灯塔上层，巨大灯镜、螺旋石梯、航海图、浸水信与海面窗口",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 风葬灯塔: 灯塔上层，巨大灯镜、螺旋石梯、航海图、浸水信与海面窗口. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-lighthouse.png",
+      "file": "scenes/room-lighthouse.webp"
+    },
+    {
+      "id": "room-fisher-hut",
+      "name": "潮汐渔屋",
+      "description": "渔人木屋，鱼网、潮位尺、木桶、晒鱼架与修网桌",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 潮汐渔屋: 渔人木屋，鱼网、潮位尺、木桶、晒鱼架与修网桌. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-fisher-hut.png",
+      "file": "scenes/room-fisher-hut.webp"
+    },
+    {
+      "id": "room-tide-harbor",
+      "name": "归帆港",
+      "description": "港口仓储接待厅，货箱、航海图、船票、绳网、木柜台与泊船窗景",
+      "kind": "room",
+      "prompt": "ONE finished production background for Ashen March RPG, 归帆港: 港口仓储接待厅，货箱、航海图、船票、绳网、木柜台与泊船窗景. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D cutaway interior with rear walls and ceiling removed. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/room-tide-harbor.png",
+      "file": "scenes/room-tide-harbor.webp"
+    },
+    {
+      "id": "town-drain",
+      "name": "旧城地下渠",
+      "description": "旧城下的拱形排水渠，铜闸、浅水、维护栈道和发光旧铭文",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 旧城地下渠: 旧城下的拱形排水渠，铜闸、浅水、维护栈道和发光旧铭文. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/town-drain.png",
+      "file": "scenes/town-drain.webp"
+    },
+    {
+      "id": "town-wall",
+      "name": "城墙巡径",
+      "description": "黄昏的城墙步道，石垛、巡夜灯、箭架和远处蓝瓦王城",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 城墙巡径: 黄昏的城墙步道，石垛、巡夜灯、箭架和远处蓝瓦王城. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/town-wall.png",
+      "file": "scenes/town-wall.webp"
+    },
+    {
+      "id": "town-trial",
+      "name": "公会试炼场",
+      "description": "宽敞的公会训练圆厅，木盾、旗帜、观众席和沙土地面",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 公会试炼场: 宽敞的公会训练圆厅，木盾、旗帜、观众席和沙土地面. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/town-trial.png",
+      "file": "scenes/town-trial.webp"
+    },
+    {
+      "id": "wood-roots",
+      "name": "古根洞窟",
+      "description": "巨树根系包围的地下洞窟，荧光蘑菇、树根桥和精灵石碑",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 古根洞窟: 巨树根系包围的地下洞窟，荧光蘑菇、树根桥和精灵石碑. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/wood-roots.png",
+      "file": "scenes/wood-roots.webp"
+    },
+    {
+      "id": "wood-trail",
+      "name": "银叶深径",
+      "description": "银叶森林深处的曲折石径，苔石、银色树叶、药草和小溪",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 银叶深径: 银叶森林深处的曲折石径，苔石、银色树叶、药草和小溪. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/wood-trail.png",
+      "file": "scenes/wood-trail.webp"
+    },
+    {
+      "id": "wood-well",
+      "name": "月井下层",
+      "description": "月井底部的精灵遗迹，月光泉水、断柱、银铃和浅水石台",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 月井下层: 月井底部的精灵遗迹，月光泉水、断柱、银铃和浅水石台. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/wood-well.png",
+      "file": "scenes/wood-well.webp"
+    },
+    {
+      "id": "pass-mine",
+      "name": "灰炉旧矿层",
+      "description": "深山废矿，岩柱、木支撑、星铁矿、轨道和矿灯",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 灰炉旧矿层: 深山废矿，岩柱、木支撑、星铁矿、轨道和矿灯. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/pass-mine.png",
+      "file": "scenes/pass-mine.webp"
+    },
+    {
+      "id": "pass-path",
+      "name": "栈道岔路",
+      "description": "峡谷悬崖的石木栈道岔路，矿车轨道、绳索与赤色山壁",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 栈道岔路: 峡谷悬崖的石木栈道岔路，矿车轨道、绳索与赤色山壁. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/pass-path.png",
+      "file": "scenes/pass-path.webp"
+    },
+    {
+      "id": "pass-core",
+      "name": "熔核腹地",
+      "description": "火山深处的锻炉遗迹，熔岩沟槽、黑曜石地台和巨大古炉",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 熔核腹地: 火山深处的锻炉遗迹，熔岩沟槽、黑曜石地台和巨大古炉. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/pass-core.png",
+      "file": "scenes/pass-core.webp"
+    },
+    {
+      "id": "fen-crypt",
+      "name": "王陵深层",
+      "description": "王陵地下石室，雕刻石棺、刻名银币、壁画和冷蓝烛光",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 王陵深层: 王陵地下石室，雕刻石棺、刻名银币、壁画和冷蓝烛光. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/fen-crypt.png",
+      "file": "scenes/fen-crypt.webp"
+    },
+    {
+      "id": "fen-temple",
+      "name": "沉没神殿内殿",
+      "description": "半沉神殿内殿，破损王座、星纹石柱、浅黑水和蓝色长灯",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 沉没神殿内殿: 半沉神殿内殿，破损王座、星纹石柱、浅黑水和蓝色长灯. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/fen-temple.png",
+      "file": "scenes/fen-temple.webp"
+    },
+    {
+      "id": "fen-seal",
+      "name": "黑水封印庭",
+      "description": "沼泽中的王朝封印庭，环形祭台、断桥、黑水与归灯",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 黑水封印庭: 沼泽中的王朝封印庭，环形祭台、断桥、黑水与归灯. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/fen-seal.png",
+      "file": "scenes/fen-seal.webp"
+    },
+    {
+      "id": "coast-reef",
+      "name": "潮间礁道",
+      "description": "退潮海岸礁道，潮池、漂流木、贝壳和海雾灯塔",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 潮间礁道: 退潮海岸礁道，潮池、漂流木、贝壳和海雾灯塔. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/coast-reef.png",
+      "file": "scenes/coast-reef.webp"
+    },
+    {
+      "id": "coast-hold",
+      "name": "沉船货舱",
+      "description": "倾斜但可通行的古老沉船货舱，木梁、破帆、箱子与蓝光",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 沉船货舱: 倾斜但可通行的古老沉船货舱，木梁、破帆、箱子与蓝光. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/coast-hold.png",
+      "file": "scenes/coast-hold.webp"
+    },
+    {
+      "id": "coast-deck",
+      "name": "无旗船甲板",
+      "description": "雾中幽灵帆船的宽敞甲板，主桅、舵轮、海灯和月色浪花",
+      "kind": "submap",
+      "prompt": "ONE finished production background for Ashen March RPG, 无旗船甲板: 雾中幽灵帆船的宽敞甲板，主桅、舵轮、海灯和月色浪花. Detailed hand-painted European dark fantasy game art, restrained gold and blue lighting, coherent isometric 2.5D exploration environment viewed from elevated southeast. 16:9 1920x1080. A large clearly walkable diamond floor with corners at (960,170),(1740,600),(960,1000),(180,600). Place all tall architecture and dense furniture at the outer edges; back-left investigation object, left storage box, right special interaction, front-right encounter or work area, obvious unobstructed exit at bottom center. Spacious clear central floor. Beautiful stonework, textures, wood, small props and atmospheric light. No people, no UI, no labels, no text, no collage. Each area has a unique layout and objects appropriate to its purpose.",
+      "master": "masters/coast-deck.png",
+      "file": "scenes/coast-deck.webp"
+    },
+    {
+      "id": "assassin",
+      "name": "assassin",
+      "kind": "icon",
+      "description": "crossed dark daggers with a violet crescent",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: crossed dark daggers with a violet crescent. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/assassin.png",
+      "file": "icons/assassin.png"
+    },
+    {
+      "id": "priest",
+      "name": "priest",
+      "kind": "icon",
+      "description": "a holy prayer book and warm radiant lantern",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: a holy prayer book and warm radiant lantern. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/priest.png",
+      "file": "icons/priest.png"
+    },
+    {
+      "id": "alchemist",
+      "name": "alchemist",
+      "kind": "icon",
+      "description": "a teal potion vial and copper alchemical retort",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: a teal potion vial and copper alchemical retort. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/alchemist.png",
+      "file": "icons/alchemist.png"
+    },
+    {
+      "id": "brand",
+      "name": "灰烬边境主徽记",
+      "kind": "icon",
+      "description": "an ornate golden star-clock encircled by a crescent moon, ember glow, elegant heraldic emblem, no lettering",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: an ornate golden star-clock encircled by a crescent moon, ember glow, elegant heraldic emblem, no lettering. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/brand.png",
+      "file": "icons/brand.png"
+    },
+    {
+      "id": "ranger",
+      "name": "ranger",
+      "kind": "icon",
+      "description": "a silverleaf bow and arrow with a golden star",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: a silverleaf bow and arrow with a golden star. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/ranger.png",
+      "file": "icons/ranger.png"
+    },
+    {
+      "id": "arcanist",
+      "name": "arcanist",
+      "kind": "icon",
+      "description": "a blue starfire crystal staff and an orbit",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: a blue starfire crystal staff and an orbit. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/arcanist.png",
+      "file": "icons/arcanist.png"
+    },
+    {
+      "id": "warden",
+      "name": "warden",
+      "kind": "icon",
+      "description": "a silver shield and oath sword with golden trim",
+      "prompt": "ONE elegant dark fantasy RPG interface emblem: a silver shield and oath sword with golden trim. Transparent background, centered whole subject, crisp edges, finely painted gold metal with restrained colored highlights. Square 512px. Match Ashen March's gold framed fantasy UI icons. No plaque, no text, no letters, no background.",
+      "master": "masters/warden.png",
+      "file": "icons/warden.png"
+    }
+  ]
+}

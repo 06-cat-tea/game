@@ -8,7 +8,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
  const inventory=await page.evaluate(async()=>{const result=[];for(const [kind,ids,sizes]of [['buildings',WorldAssets.buildings,[1024,512]],['portraits',WorldAssets.portraits,[512,256]],['scenes',WorldAssets.scenes,[1920]]])for(const id of ids)for(const size of sizes){const image=new Image(),ok=await new Promise(resolve=>{image.onload=()=>resolve(true);image.onerror=()=>resolve(false);image.src=WorldAssets.path(kind,id,size);});result.push({kind,id,size,ok,w:image.naturalWidth,h:image.naturalHeight});}return result;});
  assert.equal(inventory.length,85);assert(inventory.every(x=>x.ok&&x.w===x.size&&x.h===(x.kind==='scenes'?1080:x.size)));console.log('PASS all 85 local world images load at expected sizes');
  const content=await page.evaluate(()=>({buildings:BuildingSystem.all.length,rooms:BuildingSystem.all.filter(b=>BuildingSystem.interior(b.id)).length,residents:Object.keys(GrowthSystem.npcs()).length,types:[...new Set(Object.values(GrowthSystem.npcs()).map(n=>n.type))],assets:[...new Set(BuildingSystem.all.map(b=>b.asset))]}));
- assert.equal(content.buildings,30);assert.equal(content.rooms,23);assert.equal(content.residents,26);assert.equal(content.types.length,20);assert.equal(content.assets.length,20);console.log('PASS all 20 building subjects and 20 portrait types are used by 30 landmarks and 26 residents');
+ assert.equal(content.buildings,30);assert.equal(content.rooms,25);assert.equal(content.residents,26);assert.equal(content.types.length,20);assert.equal(content.assets.length,20);console.log('PASS all 20 building subjects and 20 portrait types are used by 30 landmarks and 26 residents');
  for(const place of ['town','wood','pass','fen','coast']){
    await page.evaluate(place=>{AshenGame.travel(place);AshenGame.showScreen('adventure');},place);
    await page.waitForFunction(()=>PixelWorld.assetDiagnostics().scene&&PixelWorld.assetDiagnostics().buildings===BuildingSystem.at(AshenGame.getState().place).length&&PixelWorld.assetDiagnostics().portraits===NPCSystem.at(AshenGame.getState().place).length);
@@ -35,4 +35,6 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
  console.log('PASS portrait and landmark layouts fit mobile portrait and landscape');assert.deepEqual(errors,[]);console.log('PASS no runtime or local resource errors');
  fs.writeFileSync('artifacts/world-acceptance.json',JSON.stringify({url,images:inventory.length,...content,passed:true},null,2));await browser.close();
 })().catch(e=>{console.error(e);process.exit(1);});
+
+
 

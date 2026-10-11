@@ -22,7 +22,7 @@
   function missing(s,id){const c=costs[s.enhancements[id]||0];if(!c)return ["已达到 +3 上限"];return Object.entries(c).filter(([k,n])=>(k==="gold"?s.player.gold:s.inventory.materials[k])<n).map(([k,n])=>`${{ore:"矿石",shard:"星屑",gold:"金币"}[k]}缺少 ${n-(k==="gold"?s.player.gold:s.inventory.materials[k])}`);}
   function enhance(s,id){if(!s.inventory.owned.includes(id))return "未拥有该装备。";const lack=missing(s,id);if(lack.length)return lack.join("、");const c=costs[s.enhancements[id]||0];for(const [k,n]of Object.entries(c))if(k==="gold")s.player.gold-=n;else s.inventory.materials[k]-=n;s.enhancements[id]=(s.enhancements[id]||0)+1;return "";}
   function discover(s,kind,id){if(id&&!s.exploration[kind].includes(id))s.exploration[kind].push(id);}
-  const countDone=s=>Object.values(s.quests).filter(q=>q?.done).length+Object.values(s.regionQuests).filter(q=>q?.done).length;
+  const countDone=s=>Object.values(s.quests).filter(q=>q?.done).length+Object.values(s.regionQuests).filter(q=>q?.done).length+Object.values(s.expeditions||{}).filter(q=>q?.done).length+Object.values(s.personalQuests||{}).filter(q=>q?.done).length;
   const achievements=[
     ["explore1","第一张地图","发现 2 个区域",s=>s.exploration.regions.length>=2,20],
     ["explore2","推开门扉","发现 5 座建筑",s=>s.exploration.buildings.length>=5,40],
