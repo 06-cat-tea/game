@@ -90,11 +90,23 @@ v6 自动存档沿用 `ashen-frontier-save-v3` 存储键，兼容 v2～v5。迁�
 
 所有 45 张新素材通过 imagegen 逐张制作，`assets/expansion/catalog.json` 保存映射及提示词。`node tools/preview-expansion.cjs` 检查母版尺寸、透明通道并生成全部场景联系表；`node tools/expansion-art.cjs <素材ID> <PNG路径>` 导入母版并重建游戏资源。相关图片处理工具仅用于开发，游戏没有外部依赖。
 
+## 环境素材细节
+
+四张环境图集拆分为 84 项透明素材，接入六个室外区域：道路与水面、自然景观、街具及建筑附属细节。资源与来源提示词位于 `assets/environment/`，游戏只加载最长边 384px 的场景资源。室内原画、互动、通行规则和 v6 存档继续沿用。
+
+`node tools/environment-assets.cjs build` 重建运行时资源、清单脚本和编号预览；`node tests/environment-acceptance.cjs [可选 URL]` 检查全部素材引用、透明度、加载、摆放避让、桥梁与图片失败回退。`node tools/environment-screenshots.cjs after` 和 `node tools/environment-comparison.cjs` 生成六区域截图、桥梁与立面细节及前后对比，输出至 `artifacts/`。
+
 ## 地图与人物美术扩展
 
 - 建筑图集的 20 类建筑已分离为透明 PNG，包含 1024px 母版与 512px 场景资源；肖像图集的 20 类人物包含 512px 母版与 256px UI 资源，存于 `assets/world/`。
-- 五地分别接入 imagegen 生成的 1920×1080 本地场景背景。建筑与居民仍是可独立交互、按地面深度排序的对象。
+- 五地原画作为配色参考和 HUD 小地图虚化背景；六个室外区域使用覆盖全世界的连续地面纹理。建筑与居民仍是可独立交互、按地面深度排序的对象。
 - 新增王城、街区、学院、炼金室、马厩、城门、农田、兵营、矿场、旧堡、地牢、云城及港口。15 位新增居民提供训练、炼药、收获、交易、档案、停战和路线服务，并使用统一好感记录。
 - `js/world-content.js` 管理扩展地点、居民与服务；`js/world-assets.js` 管理本地图片；`js/world-hit-masks.js` 使用构建时生成的透明命中掩码，兼容直接打开 HTML。
 - `assets/world/catalog.json` 包含全部素材映射、来源说明与 imagegen 提示词。`node tools/build-world-assets.cjs` 重建小尺寸资源、命中掩码、透明检查与素材联系表。
 - `node tests/world-acceptance.cjs [可选 URL]` 检查 85 张资源、20 类建筑与肖像的实际引用、五区域绘制、全部地标命中、室内居民、服务限制、重载与手机布局。
+
+## 连续背景与小地图修整
+
+室外移除固定矩形原画覆盖，现有素材内部纹理通过固定随机、重叠羽化及区域调色组成连续地面，世界外围延展同一区域纹理；道路、水渠和桥梁沿用原坐标。沼泽装饰使用冷色调。HUD 小地图显示当前区域的虚化景色，王城由地形与装饰生成底图，地图标记和点击行为沿用原逻辑。纹理、地形和底图缓存随图片完成加载刷新。
+
+`node tests/background-acceptance.cjs [可选 URL]` 验证六区域背景、12处镜头边缘与缩放、圆形景色小地图、缓存及加载失败回退，输出 `artifacts/background-comparison.png` 与 `artifacts/background-acceptance.json`。直接打开 HTML 的截图检查在浏览器外读取像素，兼容本地图片的 Canvas 安全限制。
