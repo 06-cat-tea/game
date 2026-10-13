@@ -7,7 +7,7 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.6';
   const create=async(options={})=>{const page=await browser.newPage({viewport:{width:1440,height:810},...options});page.on('pageerror',e=>errors.push(e.message));return page;};
   const ready=page=>page.waitForFunction(()=>window.GameLoading&&!GameLoading.blocked()&&GameLoading.diagnostics().status==='ready');
   const page=await create(),startupRequests=[];page.on('request',r=>startupRequests.push(r.url()));let release;const hold=new Promise(r=>release=r);
-  await page.route('**/portraits/hero-256.png',async route=>{await hold;await route.continue();});
+  await page.route('**/portraits/hero-256.png*',async route=>{await hold;await route.continue();});
   await page.goto(url,{waitUntil:'domcontentloaded'});await ready(page);
   assert(startupRequests.every(url=>!url.includes('/environment/sprites/')&&!url.includes('/expansion/scenes/')&&!url.includes('/vendor/live2d/')&&!url.includes('/world/buildings/')));
   assert.equal(await page.evaluate(()=>GameLoading.diagnostics().key),'title');checks.push('Title does not fetch the map, interiors or Live2D SDK');
@@ -35,13 +35,29 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.6';
   assert.equal(await page.evaluate(()=>GameLoading.diagnostics().key),'title');
   await page.locator('[data-command=continue]').click();await ready(page);assert(await page.evaluate(()=>!!PixelWorld.getInterior()&&PixelWorld.assetDiagnostics().scene));
   assert(await page.evaluate(()=>GameLoading.manifest(AshenGame.getState()).every(r=>!['scenes','environment','buildings'].includes(r.kind))));checks.push('Saved interior waits only for its own artwork');
+  const slow=await create();let deliver;const delayed=new Promise(r=>deliver=r);
+  await slow.route('**/portraits/hero-256.png*',async r=>{await delayed;await r.continue();});
+  await slow.goto(url,{waitUntil:'domcontentloaded'});await ready(slow);
+  await slow.evaluate(()=>{const original=window.setTimeout;window.setTimeout=(fn,ms,...args)=>original(fn,ms===45000?150:ms,...args);AshenGame.command('continue');});
+  await slow.waitForFunction(()=>GameLoading.diagnostics().status==='failed');
+  assert(await slow.evaluate(()=>GameLoading.diagnostics().failed.some(r=>r.id==='hero'&&r.reason==='timeout'&&r.url.includes('hero-256.png'))));
+  deliver();await ready(slow);assert.equal(await slow.evaluate(()=>GameLoading.diagnostics().failed.length),0);checks.push('Delayed image automatically clears the error and enters the map');
+  const flaky=await create();let attempts=0;const retryUrls=[],interrupted=new Set();
+  await flaky.route('**/environment/sprites/**',r=>{
+    const file=new URL(r.request().url()).pathname;
+    if(!interrupted.has(file)&&interrupted.size<13){interrupted.add(file);return r.abort();}
+    return r.continue();
+  });
+  await flaky.route('**/portraits/hero-256.png*',r=>{retryUrls.push(r.request().url());return ++attempts===1?r.abort():r.continue();});
+  await flaky.goto(url,{waitUntil:'domcontentloaded'});await ready(flaky);await flaky.locator('[data-command=continue]').click();await ready(flaky);
+  assert.equal(attempts,2);assert.equal(interrupted.size,13);assert(retryUrls[1].includes('asset-retry='));checks.push('Thirteen interrupted scene images recover automatically with fresh requests');
   // Failed art stays gated until the user retries; successful assets remain cached.
-  const retry=await create();let fail=true;await retry.route('**/portraits/hero-256.png',r=>fail?r.abort():r.continue());
+  const retry=await create();let fail=true;await retry.route('**/portraits/hero-256.png*',r=>fail?r.abort():r.continue());
   await retry.goto(url);await ready(retry);await retry.locator('[data-command=continue]').click();await retry.waitForFunction(()=>window.GameLoading&&GameLoading.diagnostics().status==='failed');
   assert(await retry.evaluate(()=>GameLoading.blocked()));await retry.screenshot({path:'artifacts/loading-error.png'});fail=false;await retry.locator('[data-loading-retry]').click();await ready(retry);checks.push('Asset failure and retry');
   const fallback=await create();await fallback.route('**/environment/sprites/**',r=>r.abort());await fallback.goto(url);await ready(fallback);await fallback.locator('[data-command=continue]').click();await fallback.waitForFunction(()=>window.GameLoading&&GameLoading.diagnostics().status==='failed');await fallback.locator('[data-loading-fallback]').click();await ready(fallback);assert(await fallback.evaluate(()=>PixelWorld.assetDiagnostics().scene));checks.push('Explicit procedural fallback');
   for(const [width,height] of [[844,390],[390,844]]){
-    const mobile=await create({viewport:{width,height},hasTouch:true,isMobile:true});let unblock;const pending=new Promise(r=>unblock=r);await mobile.route('**/portraits/hero-256.png',async r=>{await pending;await r.continue();});await mobile.goto(url,{waitUntil:'domcontentloaded'});await mobile.waitForFunction(()=>window.AshenGame);await mobile.evaluate(()=>AshenGame.command('continue'));await mobile.waitForTimeout(500);await mobile.screenshot({path:'artifacts/loading-'+width+'x'+height+'.png'});
+    const mobile=await create({viewport:{width,height},hasTouch:true,isMobile:true});let unblock;const pending=new Promise(r=>unblock=r);await mobile.route('**/portraits/hero-256.png*',async r=>{await pending;await r.continue();});await mobile.goto(url,{waitUntil:'domcontentloaded'});await mobile.waitForFunction(()=>window.AshenGame);await mobile.evaluate(()=>AshenGame.command('continue'));await mobile.waitForTimeout(500);await mobile.screenshot({path:'artifacts/loading-'+width+'x'+height+'.png'});
     const fits=await mobile.evaluate(()=>{const rect=GameViewport.localRect(document.querySelector('.loading-content')),size=GameViewport.size();return rect.x>=0&&rect.y>=0&&rect.x+rect.width<=size.width&&rect.y+rect.height<=size.height;});assert(fits);unblock();await ready(mobile);assert(await mobile.evaluate(()=>!GameHUD.blocked()));await mobile.close();checks.push(width+'x'+height+' loading fits rotated viewport');
   }
   assert.deepEqual(errors,[]);await browser.close();fs.writeFileSync('artifacts/loading-acceptance.json',JSON.stringify({url,checks,errors,passed:true},null,2));console.log('PASS '+checks.join('\nPASS '));

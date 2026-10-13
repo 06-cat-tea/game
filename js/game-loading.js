@@ -58,6 +58,13 @@
     screen.querySelector('[data-loading-fallback]').hidden=!diagnostics.failed.length;
     screen.querySelector('[data-loading-retry]').focus({preventScroll:true});
   }
+  function remainingFailures(){return diagnostics.failed.filter(r=>WorldAssets.inspect(r.kind,r.id)?.status!=='ready');}
+  window.addEventListener('worldassetready',()=>{
+    if(!active||diagnostics.status!=='failed'||!diagnostics.failed.length)return;
+    diagnostics.failed=remainingFailures();
+    if(diagnostics.failed.length){failure('有 '+diagnostics.failed.length+' 项画面未能载入，请重试。');return;}
+    task=prepare(generation).catch(error=>{console.error(error);failure('场景准备未完成，请重试。');});
+  });
   async function run(s,retry=false){
     const token=++generation;currentState=s;currentKey=GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor');
     const room=SceneSystem.get(s.location?.sceneId);destination.textContent=room?.title||GameData.PLACES[s.place].name;title.textContent='循光赴远境';lock();
@@ -74,6 +81,7 @@
         }
       }));
       if(token!==generation)return;
+      diagnostics.failed=remainingFailures();
       if(diagnostics.failed.length){failure('有 '+diagnostics.failed.length+' 项画面未能载入，请重试。');return;}
       await prepare(token);
     }catch(error){if(token===generation){console.error('Scene preparation failed',error);failure('场景准备未完成，请重试。');}}
@@ -92,5 +100,5 @@
       e.preventDefault();(buttons.length?buttons[(index+(e.shiftKey?-1:1)+buttons.length)%buttons.length]:screen).focus({preventScroll:true});
     }
   },{capture:true,passive:false});
-  window.GameLoading={ensure,manifest,blocked:()=>active,whenReady:()=>task,diagnostics:()=>({...diagnostics,failed:[...diagnostics.failed]})};
+  window.GameLoading={ensure,manifest,blocked:()=>active,whenReady:()=>task,diagnostics:()=>({...diagnostics,failed:diagnostics.failed.map(r=>({...r,...WorldAssets.inspect(r.kind,r.id)}))})};
 })();
