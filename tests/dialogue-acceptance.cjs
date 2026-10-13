@@ -28,7 +28,7 @@ const url=process.argv[2]||'file:///'+path.resolve('frontier.html').replaceAll('
       for(const index of [0,1]){
         await page.evaluate(({id,topic})=>{const s=AshenGame.getState();delete s.flags[`dialogue:${id}:${topic}:choice`];localStorage.setItem('ashen-frontier-save-v3',JSON.stringify(s));AshenGame.command('load');}, {id,topic});
         const before=await state();assert(await advanceToChoice(id,topic));
-        const result=await page.evaluate(index=>{const chosen=DialogueSystem.choose(index),response=!!document.querySelector('.dialogue-text');DialogueSystem.next();DialogueSystem.next();return {chosen,response,active:DialogueSystem.reading()};},index);
+        const result=await page.evaluate(index=>{const chosen=DialogueSystem.choose(index),response=!!document.querySelector('.dialogue-text');DialogueSystem.next();DialogueSystem.next();DialogueSystem.next();return {chosen,response,active:DialogueSystem.reading()};},index);
         assert(result.chosen&&result.response&&!result.active);const after=await state();assert.equal(after.flags[`dialogue:${id}:${topic}:seen`],true);
         assert.equal(after.relationships[id].value,Math.min(100,before.relationships[id].value+(topic==='past'&&index===0?2:0)));
         assert.equal(after.day,before.day);assert.equal(after.phase,before.phase);assert.deepEqual(after.quests,before.quests);assert.deepEqual(after.personalQuests,before.personalQuests);assert.equal(after.player.gold,before.player.gold);

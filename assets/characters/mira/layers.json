@@ -1,0 +1,132 @@
+{
+  "width": 1024,
+  "height": 1536,
+  "layers": [
+    {
+      "name": "01_BackHair",
+      "file": "layers/01_BackHair.png",
+      "left": 187,
+      "top": 10,
+      "width": 650,
+      "height": 975,
+      "hidden": false
+    },
+    {
+      "name": "02_FaceBase",
+      "file": "layers/02_FaceBase.png",
+      "left": 330,
+      "top": 70,
+      "width": 360,
+      "height": 360,
+      "hidden": false
+    },
+    {
+      "name": "03_Body",
+      "file": "layers/03_Body.png",
+      "left": 62,
+      "top": 255,
+      "width": 900,
+      "height": 1350,
+      "hidden": false
+    },
+    {
+      "name": "04_EyeLeftOpen",
+      "file": "layers/04_EyeLeftOpen.png",
+      "left": 435,
+      "top": 179,
+      "width": 66,
+      "height": 53,
+      "hidden": false
+    },
+    {
+      "name": "05_EyeRightOpen",
+      "file": "layers/05_EyeRightOpen.png",
+      "left": 530,
+      "top": 179,
+      "width": 66,
+      "height": 53,
+      "hidden": false
+    },
+    {
+      "name": "06_EyeLeftClosed",
+      "file": "layers/06_EyeLeftClosed.png",
+      "left": 435,
+      "top": 180,
+      "width": 66,
+      "height": 47,
+      "hidden": true
+    },
+    {
+      "name": "07_EyeRightClosed",
+      "file": "layers/07_EyeRightClosed.png",
+      "left": 530,
+      "top": 180,
+      "width": 66,
+      "height": 46,
+      "hidden": true
+    },
+    {
+      "name": "08_MouthNeutral",
+      "file": "layers/08_MouthNeutral.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 10,
+      "hidden": false
+    },
+    {
+      "name": "08_MouthSmile",
+      "file": "layers/08_MouthSmile.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 10,
+      "hidden": true
+    },
+    {
+      "name": "08_MouthSerious",
+      "file": "layers/08_MouthSerious.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 10,
+      "hidden": true
+    },
+    {
+      "name": "08_MouthSmall",
+      "file": "layers/08_MouthSmall.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 16,
+      "hidden": true
+    },
+    {
+      "name": "08_MouthMedium",
+      "file": "layers/08_MouthMedium.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 21,
+      "hidden": true
+    },
+    {
+      "name": "08_MouthOpen",
+      "file": "layers/08_MouthOpen.png",
+      "left": 492,
+      "top": 284,
+      "width": 33,
+      "height": 24,
+      "hidden": true
+    },
+    {
+      "name": "09_FrontHair",
+      "file": "layers/09_FrontHair.png",
+      "left": 212,
+      "top": 10,
+      "width": 600,
+      "height": 900,
+      "hidden": false
+    }
+  ]
+}
