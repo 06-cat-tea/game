@@ -2,24 +2,68 @@
   'use strict';
   const entries = {
     hero: {name: '你', fallbackType: 'hero'},
-    mira: {name: '米拉·烬语', fallbackType: 'mage', image: 'assets/characters/mira/mira-standing.webp', modelBundle: 'assets/characters/mira/model-bundle.js?v=6.9'},
+    mira: {name: '米拉·烬语', fallbackType: 'mage', modelBundle: 'assets/characters/mira/model-bundle.js?v=6.9'},
     toren: {name: '托伦·灰盾', fallbackType: 'knight'},
     sylvi: {name: '希薇·苔歌', fallbackType: 'archer'},
     'ridge-scout': {name: '夜岚', fallbackType: 'bandit'},
     eira: {name: '艾拉祭司', fallbackType: 'priest'},
     alchemist: {name: '瑟琳', fallbackType: 'mage'}
   };
-  const cache = new Map();
-  function preload(id) {
-    const entry = entries[id];
-    if (!entry?.image || cache.has(id)) return;
-    const image = new Image(); image.src = entry.image; cache.set(id, image);
+  for(const [id,entry] of Object.entries(entries)) {
+    if(id==='eira')continue;
+    entry.images=Object.fromEntries(['neutral','smile','serious'].map(expression=>[expression,`assets/characters/${id}/static-v1/${expression}.webp`]));
+    entry.image=entry.images.neutral;
   }
-  function markup(id, name, type) {
-    const entry = entries[id];
-    if (!entry?.image) return WorldAssets.portrait(entry?.fallbackType || type, name, 'dialogue-portrait');
-    const safeName = window.GameUI.esc(name);
-    return `<img class="dialogue-portrait character-standing-art" src="${entry.image}" alt="${safeName}" decoding="async"><canvas class="character-live2d" aria-hidden="true" hidden></canvas>`;
+  const bindings=new WeakMap();
+  const expressionFor=(entry,expression)=>entry?.images?.[expression]?expression:'neutral';
+  function preload(id,expression='neutral') {
+    const entry=entries[id],url=entry?.images?.[expressionFor(entry,expression)];
+    return url?WorldAssets.load('url',url,WorldAssets.inspect('url',url)?.status==='failed'):Promise.resolve(null);
   }
-  window.CharacterPortraits = {entries, preload, markup};
+  function markup(id,name,type,expression='neutral',options={}) {
+    const entry=entries[id];
+    if(!entry?.image)return WorldAssets.portrait(entry?.fallbackType||type,name,options.className||'dialogue-portrait');
+    const mood=expressionFor(entry,expression),safe=GameUI.esc;
+    const image=`<img class="${safe(options.className||'dialogue-portrait')} character-standing-art" data-standing-id="${safe(id)}" data-standing-expression="${mood}" data-portrait-state="fallback" src="${WorldAssets.path('portraits',entry.fallbackType)}" alt="${safe(name)}" decoding="async">`;
+    return image+(entry.modelBundle&&options.animated!==false?'<canvas class="character-live2d" aria-hidden="true" hidden></canvas>':'');
+  }
+  function apply(image,binding,url,rank,mood) {
+    if(!image.isConnected||bindings.get(image)!==binding||rank<binding.rank||WorldAssets.inspect('url',url)?.status!=='ready')return;
+    binding.rank=rank;const source=WorldAssets.get('url',url).src;
+    if(image.src!==source)image.src=source;
+    image.dataset.portraitState='ready';image.dataset.loadedExpression=mood;
+    // Keep the image hidden if Mira's canvas is already rendering.
+  }
+  function activate(root=document) {
+    for(const image of root.querySelectorAll('img[data-standing-id]')) {
+      if(bindings.has(image))continue;
+      const id=image.dataset.standingId,entry=entries[id],expression=image.dataset.standingExpression;
+      const binding={rank:-1};bindings.set(image,binding);
+      preload(id,expression).then(async result=>{
+        if(result?.status==='ready'){apply(image,binding,entry.images[expression],1,expression);return;}
+        if(!image.isConnected||expression==='neutral')return;
+        const fallback=await preload(id,'neutral');
+        if(fallback?.status==='ready')apply(image,binding,entry.image,0,'neutral');
+      });
+    }
+  }
+  function setExpression(root,expression='neutral') {
+    if(!root)return;
+    for(const image of root.querySelectorAll('img[data-standing-id]')) {
+      const mood=expressionFor(entries[image.dataset.standingId],expression);
+      if(image.dataset.standingExpression===mood)continue;
+      image.dataset.standingExpression=mood;bindings.delete(image);
+    }
+    activate(root);
+  }
+  window.addEventListener('worldassetready',event=>{
+    if(event.detail.kind!=='url')return;
+    for(const image of document.querySelectorAll('img[data-standing-id]')) {
+      const binding=bindings.get(image),entry=entries[image.dataset.standingId],mood=image.dataset.standingExpression;
+      if(!binding)continue;
+      if(entry.images[mood]===event.detail.id)apply(image,binding,event.detail.id,1,mood);
+      else if(entry.image===event.detail.id)apply(image,binding,event.detail.id,0,'neutral');
+    }
+  });
+  window.CharacterPortraits={entries,preload,markup,activate,setExpression};
 })();

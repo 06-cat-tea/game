@@ -71,7 +71,7 @@
     instance.mouthUntil = /[\s，。！？；：、,.!?;:]/u.test(char || '') ? 0 : performance.now() + 100;
   }
   function stopSpeaking() {if (instance) instance.mouthUntil = 0;}
-  function setExpression(name = 'neutral') {if (instance) instance.expression = name;}
+  function setExpression(name = 'neutral') {if (instance) {instance.expression=name;window.CharacterPortraits?.setExpression(instance.canvas.parentElement,name);}}
   function resize(current) {
     const rect = window.GameViewport.localRect(current.canvas);
     const dpr = Math.min(devicePixelRatio || 1, 2);

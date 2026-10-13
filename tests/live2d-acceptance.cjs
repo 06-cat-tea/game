@@ -96,8 +96,11 @@ const url = process.argv[2] || 'file:///' + path.resolve('frontier.html').replac
     const paused=await page.evaluate(()=>Live2DPortraits.inspect());assert(paused.paused);assert(!paused.active);
     await page.waitForTimeout(140);assert.deepEqual((await page.evaluate(()=>Live2DPortraits.inspect())).values,paused.values);
     await page.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});await ready();
+    await page.evaluate(()=>Live2DPortraits.setExpression('serious'));
+    await page.waitForFunction(()=>document.querySelector('.character-standing-art')?.dataset.loadedExpression==='serious');
     await page.evaluate(()=>document.querySelector('.character-live2d').getContext('webgl').getExtension('WEBGL_lose_context').loseContext());
     await page.waitForTimeout(150);assert.equal(await page.evaluate(()=>Live2DPortraits.inspect().active),false);assert(await page.locator('.character-standing-art').isVisible());
+    assert.equal(await page.locator('.character-standing-art').getAttribute('data-loaded-expression'),'serious');
   });
   await test('automatic reading pauses at choices and keeps the resident until the player replies',async()=>{
     await meet();await page.evaluate(()=>{DialogueSystem.start('mira','daily');DialogueSystem.advance();});await ready();

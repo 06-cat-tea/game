@@ -22,10 +22,10 @@
     options=options.replace(backButton,'');
     const n=GrowthSystem.npcs()[id],portraitId=speaker==='你'?'hero':id;
     window.Live2DPortraits?.dispose();
-    const portrait=window.CharacterPortraits?.markup(portraitId,speaker,speaker==='你'?'hero':n.type)||WorldAssets.portrait(n.type,n.name,'dialogue-portrait');
-    ctx.modal(`<div class="dialogue-reader"><span class="dialogue-label">${esc(label||n.role)}</span><div class="dialogue-toolbar">${backButton}<button data-dialogue-auto="1" aria-pressed="${auto}">自动 ${auto?'开':'关'}</button><button data-dialogue-leave="1">告别</button></div><div class="dialogue-character" data-character-id="${esc(portraitId)}">${portrait}</div><div class="dialogue-options">${options}</div><div class="dialogue-caption"><b class="dialogue-speaker">${esc(speaker)}</b><button class="dialogue-text" data-dialogue-advance="1" aria-label="显示完整对白"></button><button class="dialogue-advance" data-dialogue-next="1" data-dialogue-token="${session?.token||0}" aria-label="继续对白">◆</button></div></div>`,true);
-    window.CharacterPortraits?.preload(portraitId);
     const expression=menu?.layer==='gift'?'smile':session?.topic==='past'||session?.topic==='deep'?'serious':'neutral';
+    const portrait=window.CharacterPortraits?.markup(portraitId,speaker,speaker==='你'?'hero':n.type,expression)||WorldAssets.portrait(n.type,n.name,'dialogue-portrait');
+    ctx.modal(`<div class="dialogue-reader"><span class="dialogue-label">${esc(label||n.role)}</span><div class="dialogue-toolbar">${backButton}<button data-dialogue-auto="1" aria-pressed="${auto}">自动 ${auto?'开':'关'}</button><button data-dialogue-leave="1">告别</button></div><div class="dialogue-character" data-character-id="${esc(portraitId)}">${portrait}</div><div class="dialogue-options">${options}</div><div class="dialogue-caption"><b class="dialogue-speaker">${esc(speaker)}</b><button class="dialogue-text" data-dialogue-advance="1" aria-label="显示完整对白"></button><button class="dialogue-advance" data-dialogue-next="1" data-dialogue-token="${session?.token||0}" aria-label="继续对白">◆</button></div></div>`,true);
+    window.CharacterPortraits?.activate(document.querySelector('.dialogue-character'));
     window.Live2DPortraits?.mount(document.querySelector('.dialogue-character'),portraitId,ctx.getState().settings.reduceMotion,expression);
     say(text,speaker);
     const first=session&&!(session.turn===2&&session.reply===null)?document.querySelector('.dialogue-text'):document.querySelector('.dialogue-options button:not(:disabled)')||document.querySelector('.dialogue-text');first?.focus({preventScroll:true});
