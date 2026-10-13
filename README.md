@@ -80,6 +80,10 @@ v6 自动存档沿用 `ashen-frontier-save-v3` 存储键，兼容 v2～v5。迁�
 
 ## 开发与验收
 
+6.9 的资源和加载优化见 [资源优化验收说明](资源优化-验收说明.md)。标题先加载自己的画面，进入旅途时只准备当前场景；米拉 Live2D SDK 按需加载。游戏用 `js/game-bundle.js` 按原依赖顺序打包 40 个脚本，源码改动后运行 `node tools/build-game.cjs`，分发包直接打开 HTML 无需构建。
+
+环境贴图为无损 WebP，五张仅供虚化小地图的背景使用 480×270 WebP。重复母版与中间裁切文件已清理，catalog.json 记录了可恢复的 Git 原版本；全部 38 张实际场景背景、米拉可编辑工程和存档保持可用。
+
 `node tests/dialogue-acceptance.cjs [可选 URL]` 验证全部 204 个话题的两条分支、19／20／39／40 好感门槛、防重复奖励、室内外身份、v2～v6 兼容、存档导入导出、任务反馈、Escape 层级及六种视口中的长对白分段。截图与报告写入 `artifacts/`。
 
 `node tests/viewport-acceptance.cjs [可选 URL]` 使用独立的电脑和真实触控浏览器上下文，覆盖 1920×1080、1280×720、844×390、640×360、390×844、360×640：游戏边界、44px 触控目标、坐标往返、旋转后建筑／人物／地图命中、双指摇杆、松手／取消／失焦／旋转清理、Tab 轮盘八方向与取消、点击模式、Canvas 常驻、战斗操作可见、逐字阅读、自动播放暂停、赠礼确认及交易返回。
@@ -94,7 +98,7 @@ v6 自动存档沿用 `ashen-frontier-save-v3` 存储键，兼容 v2～v5。迁�
 
 ## 内室与路线美术
 
-`assets/expansion/masters/` 保存 38 张 1920×1080 PNG 母版、512px 透明主徽记及六枚职业图标。`scenes/` 保存游戏按当前场景加载的 WebP；图片缓存最多保留四张扩展场景。`icons/` 保存 256px 主徽记、128px 职业图标、简化 SVG 与 32px favicon。新增游戏资源约 16.6 MB，母版不在运行时加载。
+`assets/expansion/scenes/` 保存全部 38 张按当前场景加载的 1920×1080 WebP；图片缓存最多保留四张扩展场景。`icons/` 保存 256px 主徽记、128px 职业图标、简化 SVG 与 32px favicon。运行资源约 16.6 MB；重复 PNG 母版已清理，原画可从 catalog.json 的 sourceRevision 对应 Git 版本恢复。
 
 所有 45 张新素材通过 imagegen 逐张制作，`assets/expansion/catalog.json` 保存映射及提示词。`node tools/preview-expansion.cjs` 检查母版尺寸、透明通道并生成全部场景联系表；`node tools/expansion-art.cjs <素材ID> <PNG路径>` 导入母版并重建游戏资源。相关图片处理工具仅用于开发，游戏没有外部依赖。
 
@@ -107,7 +111,7 @@ v6 自动存档沿用 `ashen-frontier-save-v3` 存储键，兼容 v2～v5。迁�
 ## 地图与人物美术扩展
 
 - 建筑图集的 20 类建筑已分离为透明 PNG，包含 1024px 母版与 512px 场景资源；肖像图集的 20 类人物包含 512px 母版与 256px UI 资源，存于 `assets/world/`。
-- 五地原画作为配色参考和 HUD 小地图虚化背景；六个室外区域使用覆盖全世界的连续地面纹理。建筑与居民仍是可独立交互、按地面深度排序的对象。
+- 五地原画作为配色参考和 HUD 小地图虚化背景，运行时只保留 480×270 WebP 小图；六个室外区域使用覆盖全世界的连续地面纹理。建筑与居民仍是可独立交互、按地面深度排序的对象。
 - 新增王城、街区、学院、炼金室、马厩、城门、农田、兵营、矿场、旧堡、地牢、云城及港口。15 位新增居民提供训练、炼药、收获、交易、档案、停战和路线服务，并使用统一好感记录。
 - `js/world-content.js` 管理扩展地点、居民与服务；`js/world-assets.js` 管理本地图片；`js/world-hit-masks.js` 使用构建时生成的透明命中掩码，兼容直接打开 HTML。
 - `assets/world/catalog.json` 包含全部素材映射、来源说明与 imagegen 提示词。`node tools/build-world-assets.cjs` 重建小尺寸资源、命中掩码、透明检查与素材联系表。

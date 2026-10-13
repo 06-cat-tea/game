@@ -2,6 +2,21 @@
   'use strict';
   let instance = null, serial = 0, initialized = false;
   const bundlePromises = new Map();
+  let sdkPromise = null;
+  function loadSDK() {
+    if (!sdkPromise) sdkPromise = (async () => {
+      for (const [file, global] of [['live2dcubismcore.min.js','Live2DCubismCore'],['cubism-framework.js','AshenCubism'],['cubism-shaders.js','AshenCubismShaders']]) {
+        if (window[global]) continue;
+        await new Promise((resolve,reject) => {
+          const script=document.createElement('script'),timer=setTimeout(()=>{script.remove();reject(new Error('Cubism SDK load timeout'));},20000);
+          script.src='assets/vendor/live2d/'+file+'?v=5-r5';
+          script.onload=()=>{clearTimeout(timer);script.remove();window[global]?resolve():reject(new Error('Cubism SDK missing global'));};
+          script.onerror=()=>{clearTimeout(timer);script.remove();reject(new Error('Cubism SDK unavailable'));};document.head.append(script);
+        });
+      }
+    })().catch(error=>{sdkPromise=null;throw error;});
+    return sdkPromise;
+  }
   function initialize() {
     if (initialized) return;
     const sdk = window.AshenCubism;
@@ -111,7 +126,7 @@
     const token = serial, image = element.querySelector('img'), canvas = element.querySelector('canvas');
     if (!canvas) return;
     try {
-      const bundle = await loadBundle(id);
+      const [bundle] = await Promise.all([loadBundle(id),loadSDK()]);
       if (token !== serial || !element.isConnected || !bundle) return;
       initialize();
       const current = {id, canvas, image, textures: [], user: null, raf: 0, paused: document.hidden, mouthUntil: 0, expression, expressions:bundle.expressions || {}, started: performance.now(), last: performance.now()};

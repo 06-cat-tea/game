@@ -66,6 +66,7 @@
     const list=document.querySelector('.screen.active .compact-list');
     if(list?.firstElementChild&&list.clientHeight>0){const height=list.firstElementChild.offsetHeight,gap=6,capacity=Math.max(1,Math.min(mobile()?4:6,Math.floor((list.clientHeight+gap)/(height+gap))));if(capacity!==v(id).capacity){v(id).capacity=capacity;return render(id);}}
     const canvas=document.querySelector('#pixelWorld');canvas.dataset.biome=s.place;
+    window.GameLoading.ensure(s);
     window.PixelWorld.clearInput();window.PixelWorld.init();window.CircleMap.draw();window.TitleScreen.activate(id);
   }
   function navigate(id,tab){if(!renderers[id])return;if(id==='adventure')adventurePanel=!!tab;if(tab){v(id).tab=tab;v(id).page=0;v(id).search='';v(id).selected='';}render(id);}

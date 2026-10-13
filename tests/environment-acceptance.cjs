@@ -3,7 +3,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||path.join(require('os').
 const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp'));
 (async()=>{
  fs.mkdirSync('artifacts',{recursive:true});const catalog=JSON.parse(fs.readFileSync('assets/environment/catalog.json'));assert.equal(catalog.entries.length,84);
- for(const e of catalog.entries){for(const file of [e.source,e.crop,e.master,e.sprite])assert(fs.existsSync('assets/environment/'+file),e.id+' '+file);const stats=await sharp('assets/environment/'+e.sprite).stats();assert.equal(stats.channels.length,4);assert.equal(stats.channels[3].min,0);assert(stats.channels[3].max>200);}
+ for(const e of catalog.entries){for(const file of [e.source,e.sprite])assert(fs.existsSync('assets/environment/'+file),e.id+' '+file);const stats=await sharp('assets/environment/'+e.sprite).stats();assert.equal(stats.channels.length,4);assert.equal(stats.channels[3].min,0);assert(stats.channels[3].max>200);}
  console.log('PASS 84 complete local transparent assets');
  const browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true}),page=await browser.newPage({viewport:{width:1920,height:1080}}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});

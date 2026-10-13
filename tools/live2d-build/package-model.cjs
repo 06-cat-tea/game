@@ -14,7 +14,10 @@ function read(relative) {
 }
 const moc = read(refs.Moc);
 if (moc.subarray(0,4).toString() !== 'MOC3') throw new Error('Not a Cubism MOC3 file');
-const bundle = {setting, moc: moc.toString('base64'), textures: refs.Textures.map(p=>'data:image/png;base64,'+read(p).toString('base64')),
+const bundle = {setting, moc: moc.toString('base64'), textures: refs.Textures.map(p=>{
+    const runtime=p.replace(/\.png$/,'.runtime.webp'),useWebp=fs.existsSync(path.resolve(base,runtime));
+    return 'data:image/'+(useWebp?'webp':'png')+';base64,'+read(useWebp?runtime:p).toString('base64');
+  }),
   physics: refs.Physics ? JSON.parse(read(refs.Physics).toString('utf8')) : null,
   expressions: Object.fromEntries((refs.Expressions||[]).map(e=>[e.Name,JSON.parse(read(e.File).toString('utf8'))]))};
 const output = path.resolve(__dirname,'../../assets/characters',id,'model-bundle.js');

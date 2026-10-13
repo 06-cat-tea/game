@@ -23,7 +23,7 @@
         <p class="launch-save"><span aria-hidden="true"></span>旅途停驻于 ${esc(place)} · ${phase}</p>
       </section>
       <div class="launch-scene-caption" aria-hidden="true"><span>归灯尚明</span><small>星陨之夜 · 王城远景</small></div>
-      <footer class="launch-footer"><span>六方远境 · 一盏归灯</span><span>星陨纪事 <i aria-hidden="true">✧</i> 6.7</span></footer>
+      <footer class="launch-footer"><span>六方远境 · 一盏归灯</span><span>星陨纪事 <i aria-hidden="true">✧</i> 6.9</span></footer>
     </div>`;
   }
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');let scheduled=0;

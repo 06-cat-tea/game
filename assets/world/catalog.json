@@ -333,37 +333,42 @@
     {
       "id": "town",
       "label": "晨星镇",
-      "file": "scenes/town.png",
-      "width": 1920,
-      "height": 1080
+      "file": "scenes/town.webp",
+      "width": 480,
+      "height": 270,
+      "usage": "minimap backdrop"
     },
     {
       "id": "wood",
       "label": "低语森林",
-      "file": "scenes/wood.png",
-      "width": 1920,
-      "height": 1080
+      "file": "scenes/wood.webp",
+      "width": 480,
+      "height": 270,
+      "usage": "minimap backdrop"
     },
     {
       "id": "pass",
       "label": "灰炉峡道",
-      "file": "scenes/pass.png",
-      "width": 1920,
-      "height": 1080
+      "file": "scenes/pass.webp",
+      "width": 480,
+      "height": 270,
+      "usage": "minimap backdrop"
     },
     {
       "id": "fen",
       "label": "月沼遗境",
-      "file": "scenes/fen.png",
-      "width": 1920,
-      "height": 1080
+      "file": "scenes/fen.webp",
+      "width": 480,
+      "height": 270,
+      "usage": "minimap backdrop"
     },
     {
       "id": "coast",
       "label": "风葬海崖",
-      "file": "scenes/coast.png",
-      "width": 1920,
-      "height": 1080
+      "file": "scenes/coast.webp",
+      "width": 480,
+      "height": 270,
+      "usage": "minimap backdrop"
     }
   ],
   "prompts": [
@@ -592,5 +597,6 @@
       "id": "church",
       "prompt": "Use case: background-extraction. Edit target: supplied building atlas. Extract church row 1 column 3. Preserve original isometric architecture and palette. Remove black background and Chinese nameplate. Transparent square PNG, centered, no text."
     }
-  ]
+  ],
+  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8"
 }

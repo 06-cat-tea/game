@@ -7,7 +7,7 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.7';
   const create=async(options={})=>{const p=await browser.newPage(options);p.on('pageerror',e=>errors.push(e.message));return p;};
   // The new key art must decode before the loading screen reveals the main menu.
   const p=await create({viewport:{width:1440,height:810}});let release;const held=new Promise(r=>release=r);
-  await p.route('**/title/ashen-frontier-keyart.webp',async r=>{await held;await r.continue();});await p.goto(url,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.AshenGame&&GameLoading.diagnostics().completed>20);
+  await p.route('**/title/ashen-frontier-keyart.webp',async r=>{await held;await r.continue();});await p.goto(url,{waitUntil:'domcontentloaded'});await p.waitForFunction(()=>window.AshenGame&&GameLoading.diagnostics().completed>0);
   assert(await p.evaluate(()=>GameLoading.blocked()&&document.querySelector('#panelLayer').inert));release();await ready(p);assert.equal(await p.evaluate(()=>GameUI.getCurrent()),'title');checks.push('Loading waits for generated title artwork');
   // Seed a real v6 save; the menu should use its place/day/level without changing it.
   const saved=await p.evaluate(()=>AshenGame.getState());Object.assign(saved,{place:'fen',day:13,phase:2});saved.player.level=6;saved.location={sceneId:null,...await p.evaluate(()=>WorldRegions.spawn('fen')),zoom:1,stack:[]};

@@ -19,7 +19,7 @@ const url = process.argv[2] || 'file:///' + path.resolve('frontier.html').replac
   }
   async function ready() {await page.waitForFunction(()=>Live2DPortraits.inspect().active && document.querySelector('.character-standing-art')?.hidden);}
   async function test(name, run) {await run();passed.push(name);console.log('PASS '+name);}
-  await page.goto(url);await page.waitForFunction(()=>window.AshenGame);await page.locator('[data-command=continue]').click();
+  await page.goto(url);await page.waitForFunction(()=>window.AshenGame);assert.equal(await page.evaluate(()=>typeof window.AshenCubism),'undefined','SDK must remain unloaded until a model is needed');await page.locator('[data-command=continue]').click();
   await test('genuine Mira MOC3 loads through the bundled official SDK under file://', async()=>{
     await meet();await ready();
     const first=await page.evaluate(()=>Live2DPortraits.inspect());

@@ -15,7 +15,7 @@ const root='assets/world',catalog=JSON.parse(fs.readFileSync(root+'/catalog.json
    }
    await sharp({create:{width:900,height:780,channels:4,background:'#121d18'}}).composite(layers).png().toFile('artifacts/world-'+kind+'-contact.png');
  }
- for(const s of catalog.scenes){const m=await sharp(root+'/'+s.file).metadata();if(m.width!==1920||m.height!==1080)throw Error('Wrong scene dimensions: '+s.id);}
+ for(const s of catalog.scenes){const m=await sharp(root+'/'+s.file).metadata();if(m.width!==480||m.height!==270)throw Error('Wrong minimap dimensions: '+s.id);}
  fs.writeFileSync('js/world-hit-masks.js','// Generated local alpha masks; file:// can query hit shapes without reading Canvas pixels.\nwindow.WorldHitMasks='+JSON.stringify(masks)+';\n');
- fs.writeFileSync('artifacts/world-assets-report.json',JSON.stringify({transparentAssets:report.length,scenes:catalog.scenes.length,assets:report},null,2));console.log('Verified 40 transparent subjects and 5 full-HD scenes.');
+ fs.writeFileSync('artifacts/world-assets-report.json',JSON.stringify({transparentAssets:report.length,scenes:catalog.scenes.length,assets:report},null,2));console.log('Verified 40 transparent subjects and 5 minimap backdrops.');
 })().catch(e=>{console.error(e);process.exit(1);});

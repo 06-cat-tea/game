@@ -15,7 +15,7 @@
       },
       "crop": "crops/water-01-blue-pool.png",
       "master": "masters/water-01-blue-pool.png",
-      "sprite": "sprites/water-01-blue-pool.png",
+      "sprite": "sprites/water-01-blue-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -49,7 +49,7 @@
       },
       "crop": "crops/water-02-deep-pool.png",
       "master": "masters/water-02-deep-pool.png",
-      "sprite": "sprites/water-02-deep-pool.png",
+      "sprite": "sprites/water-02-deep-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -83,7 +83,7 @@
       },
       "crop": "crops/water-03-clear-pool.png",
       "master": "masters/water-03-clear-pool.png",
-      "sprite": "sprites/water-03-clear-pool.png",
+      "sprite": "sprites/water-03-clear-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -118,7 +118,7 @@
       },
       "crop": "crops/water-04-grass-bank.png",
       "master": "masters/water-04-grass-bank.png",
-      "sprite": "sprites/water-04-grass-bank.png",
+      "sprite": "sprites/water-04-grass-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -152,7 +152,7 @@
       },
       "crop": "crops/water-05-sand-bank.png",
       "master": "masters/water-05-sand-bank.png",
-      "sprite": "sprites/water-05-sand-bank.png",
+      "sprite": "sprites/water-05-sand-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -186,7 +186,7 @@
       },
       "crop": "crops/water-06-flower-bank.png",
       "master": "masters/water-06-flower-bank.png",
-      "sprite": "sprites/water-06-flower-bank.png",
+      "sprite": "sprites/water-06-flower-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -220,7 +220,7 @@
       },
       "crop": "crops/water-07-canal-horizontal.png",
       "master": "masters/water-07-canal-horizontal.png",
-      "sprite": "sprites/water-07-canal-horizontal.png",
+      "sprite": "sprites/water-07-canal-horizontal.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -254,7 +254,7 @@
       },
       "crop": "crops/water-08-canal-vertical.png",
       "master": "masters/water-08-canal-vertical.png",
-      "sprite": "sprites/water-08-canal-vertical.png",
+      "sprite": "sprites/water-08-canal-vertical.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -288,7 +288,7 @@
       },
       "crop": "crops/water-09-canal-left.png",
       "master": "masters/water-09-canal-left.png",
-      "sprite": "sprites/water-09-canal-left.png",
+      "sprite": "sprites/water-09-canal-left.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -322,7 +322,7 @@
       },
       "crop": "crops/water-10-canal-right.png",
       "master": "masters/water-10-canal-right.png",
-      "sprite": "sprites/water-10-canal-right.png",
+      "sprite": "sprites/water-10-canal-right.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -356,7 +356,7 @@
       },
       "crop": "crops/water-11-canal-cross.png",
       "master": "masters/water-11-canal-cross.png",
-      "sprite": "sprites/water-11-canal-cross.png",
+      "sprite": "sprites/water-11-canal-cross.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -390,7 +390,7 @@
       },
       "crop": "crops/water-12-canal-cross-wide.png",
       "master": "masters/water-12-canal-cross-wide.png",
-      "sprite": "sprites/water-12-canal-cross-wide.png",
+      "sprite": "sprites/water-12-canal-cross-wide.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -424,7 +424,7 @@
       },
       "crop": "crops/water-13-waterfall.png",
       "master": "masters/water-13-waterfall.png",
-      "sprite": "sprites/water-13-waterfall.png",
+      "sprite": "sprites/water-13-waterfall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -459,7 +459,7 @@
       },
       "crop": "crops/water-14-royal-channel.png",
       "master": "masters/water-14-royal-channel.png",
-      "sprite": "sprites/water-14-royal-channel.png",
+      "sprite": "sprites/water-14-royal-channel.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -493,7 +493,7 @@
       },
       "crop": "crops/water-15-royal-basin.png",
       "master": "masters/water-15-royal-basin.png",
-      "sprite": "sprites/water-15-royal-basin.png",
+      "sprite": "sprites/water-15-royal-basin.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -527,7 +527,7 @@
       },
       "crop": "crops/water-16-water-bridge.png",
       "master": "masters/water-16-water-bridge.png",
-      "sprite": "sprites/water-16-water-bridge.png",
+      "sprite": "sprites/water-16-water-bridge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -561,7 +561,7 @@
       },
       "crop": "crops/water-17-royal-fountain.png",
       "master": "masters/water-17-royal-fountain.png",
-      "sprite": "sprites/water-17-royal-fountain.png",
+      "sprite": "sprites/water-17-royal-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -595,7 +595,7 @@
       },
       "crop": "crops/water-18-lion-fountain.png",
       "master": "masters/water-18-lion-fountain.png",
-      "sprite": "sprites/water-18-lion-fountain.png",
+      "sprite": "sprites/water-18-lion-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -629,7 +629,7 @@
       },
       "crop": "crops/water-19-well.png",
       "master": "masters/water-19-well.png",
-      "sprite": "sprites/water-19-well.png",
+      "sprite": "sprites/water-19-well.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -663,7 +663,7 @@
       },
       "crop": "crops/water-20-reeds.png",
       "master": "masters/water-20-reeds.png",
-      "sprite": "sprites/water-20-reeds.png",
+      "sprite": "sprites/water-20-reeds.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -698,7 +698,7 @@
       },
       "crop": "crops/water-21-stepping-stones.png",
       "master": "masters/water-21-stepping-stones.png",
-      "sprite": "sprites/water-21-stepping-stones.png",
+      "sprite": "sprites/water-21-stepping-stones.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -733,7 +733,7 @@
       },
       "crop": "crops/water-22-dock.png",
       "master": "masters/water-22-dock.png",
-      "sprite": "sprites/water-22-dock.png",
+      "sprite": "sprites/water-22-dock.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -767,7 +767,7 @@
       },
       "crop": "crops/water-23-drain.png",
       "master": "masters/water-23-drain.png",
-      "sprite": "sprites/water-23-drain.png",
+      "sprite": "sprites/water-23-drain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -801,7 +801,7 @@
       },
       "crop": "crops/water-24-lilies.png",
       "master": "masters/water-24-lilies.png",
-      "sprite": "sprites/water-24-lilies.png",
+      "sprite": "sprites/water-24-lilies.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -835,7 +835,7 @@
       },
       "crop": "crops/village-01-cobblestone.png",
       "master": "masters/village-01-cobblestone.png",
-      "sprite": "sprites/village-01-cobblestone.png",
+      "sprite": "sprites/village-01-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -869,7 +869,7 @@
       },
       "crop": "crops/village-02-brick.png",
       "master": "masters/village-02-brick.png",
-      "sprite": "sprites/village-02-brick.png",
+      "sprite": "sprites/village-02-brick.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -903,7 +903,7 @@
       },
       "crop": "crops/village-03-soil.png",
       "master": "masters/village-03-soil.png",
-      "sprite": "sprites/village-03-soil.png",
+      "sprite": "sprites/village-03-soil.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -938,7 +938,7 @@
       },
       "crop": "crops/village-04-window.png",
       "master": "masters/village-04-window.png",
-      "sprite": "sprites/village-04-window.png",
+      "sprite": "sprites/village-04-window.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -972,7 +972,7 @@
       },
       "crop": "crops/village-05-door.png",
       "master": "masters/village-05-door.png",
-      "sprite": "sprites/village-05-door.png",
+      "sprite": "sprites/village-05-door.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -1006,7 +1006,7 @@
       },
       "crop": "crops/village-06-roof.png",
       "master": "masters/village-06-roof.png",
-      "sprite": "sprites/village-06-roof.png",
+      "sprite": "sprites/village-06-roof.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -1040,7 +1040,7 @@
       },
       "crop": "crops/village-07-tavern-sign.png",
       "master": "masters/village-07-tavern-sign.png",
-      "sprite": "sprites/village-07-tavern-sign.png",
+      "sprite": "sprites/village-07-tavern-sign.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1074,7 +1074,7 @@
       },
       "crop": "crops/village-08-market-stall.png",
       "master": "masters/village-08-market-stall.png",
-      "sprite": "sprites/village-08-market-stall.png",
+      "sprite": "sprites/village-08-market-stall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1108,7 +1108,7 @@
       },
       "crop": "crops/village-09-supplies.png",
       "master": "masters/village-09-supplies.png",
-      "sprite": "sprites/village-09-supplies.png",
+      "sprite": "sprites/village-09-supplies.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1143,7 +1143,7 @@
       },
       "crop": "crops/village-10-well.png",
       "master": "masters/village-10-well.png",
-      "sprite": "sprites/village-10-well.png",
+      "sprite": "sprites/village-10-well.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1177,7 +1177,7 @@
       },
       "crop": "crops/village-11-noticeboard.png",
       "master": "masters/village-11-noticeboard.png",
-      "sprite": "sprites/village-11-noticeboard.png",
+      "sprite": "sprites/village-11-noticeboard.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1211,7 +1211,7 @@
       },
       "crop": "crops/village-12-lantern-string.png",
       "master": "masters/village-12-lantern-string.png",
-      "sprite": "sprites/village-12-lantern-string.png",
+      "sprite": "sprites/village-12-lantern-string.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1245,7 +1245,7 @@
       },
       "crop": "crops/village-13-meadow.png",
       "master": "masters/village-13-meadow.png",
-      "sprite": "sprites/village-13-meadow.png",
+      "sprite": "sprites/village-13-meadow.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1279,7 +1279,7 @@
       },
       "crop": "crops/village-14-trail.png",
       "master": "masters/village-14-trail.png",
-      "sprite": "sprites/village-14-trail.png",
+      "sprite": "sprites/village-14-trail.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1313,7 +1313,7 @@
       },
       "crop": "crops/village-15-cliff.png",
       "master": "masters/village-15-cliff.png",
-      "sprite": "sprites/village-15-cliff.png",
+      "sprite": "sprites/village-15-cliff.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1347,7 +1347,7 @@
       },
       "crop": "crops/village-16-bush.png",
       "master": "masters/village-16-bush.png",
-      "sprite": "sprites/village-16-bush.png",
+      "sprite": "sprites/village-16-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1381,7 +1381,7 @@
       },
       "crop": "crops/village-17-stump.png",
       "master": "masters/village-17-stump.png",
-      "sprite": "sprites/village-17-stump.png",
+      "sprite": "sprites/village-17-stump.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1415,7 +1415,7 @@
       },
       "crop": "crops/village-18-fallen-log.png",
       "master": "masters/village-18-fallen-log.png",
-      "sprite": "sprites/village-18-fallen-log.png",
+      "sprite": "sprites/village-18-fallen-log.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1449,7 +1449,7 @@
       },
       "crop": "crops/village-19-rocks.png",
       "master": "masters/village-19-rocks.png",
-      "sprite": "sprites/village-19-rocks.png",
+      "sprite": "sprites/village-19-rocks.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1483,7 +1483,7 @@
       },
       "crop": "crops/village-20-campfire.png",
       "master": "masters/village-20-campfire.png",
-      "sprite": "sprites/village-20-campfire.png",
+      "sprite": "sprites/village-20-campfire.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1517,7 +1517,7 @@
       },
       "crop": "crops/village-21-tent.png",
       "master": "masters/village-21-tent.png",
-      "sprite": "sprites/village-21-tent.png",
+      "sprite": "sprites/village-21-tent.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1552,7 +1552,7 @@
       },
       "crop": "crops/village-22-signpost.png",
       "master": "masters/village-22-signpost.png",
-      "sprite": "sprites/village-22-signpost.png",
+      "sprite": "sprites/village-22-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1586,7 +1586,7 @@
       },
       "crop": "crops/village-23-berry-bush.png",
       "master": "masters/village-23-berry-bush.png",
-      "sprite": "sprites/village-23-berry-bush.png",
+      "sprite": "sprites/village-23-berry-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1620,7 +1620,7 @@
       },
       "crop": "crops/village-24-fence.png",
       "master": "masters/village-24-fence.png",
-      "sprite": "sprites/village-24-fence.png",
+      "sprite": "sprites/village-24-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1654,7 +1654,7 @@
       },
       "crop": "crops/royal-01-marble.png",
       "master": "masters/royal-01-marble.png",
-      "sprite": "sprites/royal-01-marble.png",
+      "sprite": "sprites/royal-01-marble.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1688,7 +1688,7 @@
       },
       "crop": "crops/royal-02-cobblestone.png",
       "master": "masters/royal-02-cobblestone.png",
-      "sprite": "sprites/royal-02-cobblestone.png",
+      "sprite": "sprites/royal-02-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1722,7 +1722,7 @@
       },
       "crop": "crops/royal-03-brick.png",
       "master": "masters/royal-03-brick.png",
-      "sprite": "sprites/royal-03-brick.png",
+      "sprite": "sprites/royal-03-brick.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1756,7 +1756,7 @@
       },
       "crop": "crops/royal-04-grass.png",
       "master": "masters/royal-04-grass.png",
-      "sprite": "sprites/royal-04-grass.png",
+      "sprite": "sprites/royal-04-grass.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1790,7 +1790,7 @@
       },
       "crop": "crops/royal-05-flower-grass.png",
       "master": "masters/royal-05-flower-grass.png",
-      "sprite": "sprites/royal-05-flower-grass.png",
+      "sprite": "sprites/royal-05-flower-grass.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1824,7 +1824,7 @@
       },
       "crop": "crops/royal-06-hedge.png",
       "master": "masters/royal-06-hedge.png",
-      "sprite": "sprites/royal-06-hedge.png",
+      "sprite": "sprites/royal-06-hedge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1858,7 +1858,7 @@
       },
       "crop": "crops/royal-07-tree.png",
       "master": "masters/royal-07-tree.png",
-      "sprite": "sprites/royal-07-tree.png",
+      "sprite": "sprites/royal-07-tree.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1892,7 +1892,7 @@
       },
       "crop": "crops/royal-08-cypress.png",
       "master": "masters/royal-08-cypress.png",
-      "sprite": "sprites/royal-08-cypress.png",
+      "sprite": "sprites/royal-08-cypress.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1926,7 +1926,7 @@
       },
       "crop": "crops/royal-09-flower-urn.png",
       "master": "masters/royal-09-flower-urn.png",
-      "sprite": "sprites/royal-09-flower-urn.png",
+      "sprite": "sprites/royal-09-flower-urn.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1960,7 +1960,7 @@
       },
       "crop": "crops/royal-10-lamp.png",
       "master": "masters/royal-10-lamp.png",
-      "sprite": "sprites/royal-10-lamp.png",
+      "sprite": "sprites/royal-10-lamp.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1994,7 +1994,7 @@
       },
       "crop": "crops/royal-11-banner.png",
       "master": "masters/royal-11-banner.png",
-      "sprite": "sprites/royal-11-banner.png",
+      "sprite": "sprites/royal-11-banner.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2028,7 +2028,7 @@
       },
       "crop": "crops/royal-12-bench.png",
       "master": "masters/royal-12-bench.png",
-      "sprite": "sprites/royal-12-bench.png",
+      "sprite": "sprites/royal-12-bench.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2062,7 +2062,7 @@
       },
       "crop": "crops/royal-13-fountain.png",
       "master": "masters/royal-13-fountain.png",
-      "sprite": "sprites/royal-13-fountain.png",
+      "sprite": "sprites/royal-13-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2096,7 +2096,7 @@
       },
       "crop": "crops/royal-14-statue.png",
       "master": "masters/royal-14-statue.png",
-      "sprite": "sprites/royal-14-statue.png",
+      "sprite": "sprites/royal-14-statue.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2130,7 +2130,7 @@
       },
       "crop": "crops/royal-15-stairs.png",
       "master": "masters/royal-15-stairs.png",
-      "sprite": "sprites/royal-15-stairs.png",
+      "sprite": "sprites/royal-15-stairs.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2164,7 +2164,7 @@
       },
       "crop": "crops/royal-16-arch.png",
       "master": "masters/royal-16-arch.png",
-      "sprite": "sprites/royal-16-arch.png",
+      "sprite": "sprites/royal-16-arch.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2198,7 +2198,7 @@
       },
       "crop": "crops/royal-17-wall.png",
       "master": "masters/royal-17-wall.png",
-      "sprite": "sprites/royal-17-wall.png",
+      "sprite": "sprites/royal-17-wall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2232,7 +2232,7 @@
       },
       "crop": "crops/royal-18-iron-fence.png",
       "master": "masters/royal-18-iron-fence.png",
-      "sprite": "sprites/royal-18-iron-fence.png",
+      "sprite": "sprites/royal-18-iron-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2266,7 +2266,7 @@
       },
       "crop": "crops/royal-19-flowerbed.png",
       "master": "masters/royal-19-flowerbed.png",
-      "sprite": "sprites/royal-19-flowerbed.png",
+      "sprite": "sprites/royal-19-flowerbed.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2300,7 +2300,7 @@
       },
       "crop": "crops/royal-20-crates.png",
       "master": "masters/royal-20-crates.png",
-      "sprite": "sprites/royal-20-crates.png",
+      "sprite": "sprites/royal-20-crates.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2334,7 +2334,7 @@
       },
       "crop": "crops/royal-21-signpost.png",
       "master": "masters/royal-21-signpost.png",
-      "sprite": "sprites/royal-21-signpost.png",
+      "sprite": "sprites/royal-21-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2368,7 +2368,7 @@
       },
       "crop": "crops/royal-22-bridge.png",
       "master": "masters/royal-22-bridge.png",
-      "sprite": "sprites/royal-22-bridge.png",
+      "sprite": "sprites/royal-22-bridge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2402,7 +2402,7 @@
       },
       "crop": "crops/royal-23-drain.png",
       "master": "masters/royal-23-drain.png",
-      "sprite": "sprites/royal-23-drain.png",
+      "sprite": "sprites/royal-23-drain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2436,7 +2436,7 @@
       },
       "crop": "crops/royal-24-noticeboard.png",
       "master": "masters/royal-24-noticeboard.png",
-      "sprite": "sprites/royal-24-noticeboard.png",
+      "sprite": "sprites/royal-24-noticeboard.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2470,7 +2470,7 @@
       },
       "crop": "crops/forest-01-oak.png",
       "master": "masters/forest-01-oak.png",
-      "sprite": "sprites/forest-01-oak.png",
+      "sprite": "sprites/forest-01-oak.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2507,7 +2507,7 @@
       },
       "crop": "crops/forest-02-pine.png",
       "master": "masters/forest-02-pine.png",
-      "sprite": "sprites/forest-02-pine.png",
+      "sprite": "sprites/forest-02-pine.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2541,7 +2541,7 @@
       },
       "crop": "crops/forest-03-bush.png",
       "master": "masters/forest-03-bush.png",
-      "sprite": "sprites/forest-03-bush.png",
+      "sprite": "sprites/forest-03-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2576,7 +2576,7 @@
       },
       "crop": "crops/forest-04-rocks.png",
       "master": "masters/forest-04-rocks.png",
-      "sprite": "sprites/forest-04-rocks.png",
+      "sprite": "sprites/forest-04-rocks.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2611,7 +2611,7 @@
       },
       "crop": "crops/forest-05-soil.png",
       "master": "masters/forest-05-soil.png",
-      "sprite": "sprites/forest-05-soil.png",
+      "sprite": "sprites/forest-05-soil.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2646,7 +2646,7 @@
       },
       "crop": "crops/forest-06-cobblestone.png",
       "master": "masters/forest-06-cobblestone.png",
-      "sprite": "sprites/forest-06-cobblestone.png",
+      "sprite": "sprites/forest-06-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2680,7 +2680,7 @@
       },
       "crop": "crops/forest-07-flagstone.png",
       "master": "masters/forest-07-flagstone.png",
-      "sprite": "sprites/forest-07-flagstone.png",
+      "sprite": "sprites/forest-07-flagstone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2715,7 +2715,7 @@
       },
       "crop": "crops/forest-08-lamp.png",
       "master": "masters/forest-08-lamp.png",
-      "sprite": "sprites/forest-08-lamp.png",
+      "sprite": "sprites/forest-08-lamp.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2749,7 +2749,7 @@
       },
       "crop": "crops/forest-09-signpost.png",
       "master": "masters/forest-09-signpost.png",
-      "sprite": "sprites/forest-09-signpost.png",
+      "sprite": "sprites/forest-09-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2783,7 +2783,7 @@
       },
       "crop": "crops/forest-10-fence.png",
       "master": "masters/forest-10-fence.png",
-      "sprite": "sprites/forest-10-fence.png",
+      "sprite": "sprites/forest-10-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2817,7 +2817,7 @@
       },
       "crop": "crops/forest-11-flowers.png",
       "master": "masters/forest-11-flowers.png",
-      "sprite": "sprites/forest-11-flowers.png",
+      "sprite": "sprites/forest-11-flowers.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2851,7 +2851,7 @@
       },
       "crop": "crops/forest-12-barrels.png",
       "master": "masters/forest-12-barrels.png",
-      "sprite": "sprites/forest-12-barrels.png",
+      "sprite": "sprites/forest-12-barrels.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2872,5 +2872,6 @@
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
       "generationReference": "sources/forest.png"
     }
-  ]
+  ],
+  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8"
 }

@@ -7,15 +7,23 @@
   // Include off-camera decorations and the whole region's terrain, not just visible sprites.
   function manifest(s){
     const items=new Map(),add=(kind,id)=>{if(id)items.set(kind+':'+id,{kind,id});},place=s.place,room=SceneSystem.get(s.location?.sceneId);
-    if(place!=='city')add('scenes',place);
-    for(const b of BuildingSystem.at(place))if(place!=='city')add('buildings',b.asset);
-    for(const id of WorldTerrain.resourceIds(place))add('environment',id);
-    for(const o of SceneEnvironment.objects(place))add('environment',o.asset);
-    for(const p of SceneEnvironment.patches[place]||[])add('environment',p[0]);
-    for(const id of WorldAssets.portraits)add('portraits',id);
-    if(room&&!room.procedural)add('expansion',room.sceneId);
+    if(GameUI.getCurrent()==='title'){
+      add('url',TitleScreen.artwork);add('url','assets/loading/returning-light.webp');add('emblems','brand');return [...items.values()];
+    }
+    if(room){
+      if(!room.procedural)add('expansion',room.sceneId);
+      for(const n of NPCSystem.inside(room.occupantKey||room.buildingId))add('portraits',n.type);
+    }else{
+      if(place!=='city')add('scenes',place);
+      for(const b of BuildingSystem.at(place))if(place!=='city')add('buildings',b.asset);
+      for(const id of WorldTerrain.resourceIds(place))add('environment',id);
+      for(const o of SceneEnvironment.objects(place))add('environment',o.asset);
+      for(const p of SceneEnvironment.patches[place]||[])add('environment',p[0]);
+      // City people are procedural, but their portraits are used when speaking.
+      if(place!=='city')for(const n of NPCSystem.at(place))add('portraits',n.type);
+    }
+    add('portraits','hero');
     add('emblems','brand');
-    if(window.TitleScreen&&GameUI.getCurrent()==='title')add('url',TitleScreen.artwork);
     for(const id of ['map','backpack','main-quest','character','skills','crafting','achievement','settings','dialogue'])add('url','assets/icons/'+id+'-128.png');
     return [...items.values()];
   }
@@ -35,6 +43,7 @@
   }
   async function prepare(token){
     if(token!==generation)return;
+    if(currentKey==='title'){diagnostics.status='ready';update(100,'归灯已亮，旅途即将继续');unlock();root.dispatchEvent(new CustomEvent('game-ready',{detail:{key:currentKey}}));return;}
     diagnostics.status='preparing';update(94,'正在铺展地形与水岸…');
     SceneEnvironment.invalidate();WorldTerrain.invalidate();CircleMap.invalidate();
     // The renderer builds terrain/surface caches beneath the opaque loading screen.
@@ -50,7 +59,7 @@
     screen.querySelector('[data-loading-retry]').focus({preventScroll:true});
   }
   async function run(s,retry=false){
-    const token=++generation;currentState=s;currentKey=s.place+':'+(s.location?.sceneId||'outdoor');
+    const token=++generation;currentState=s;currentKey=GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor');
     const room=SceneSystem.get(s.location?.sceneId);destination.textContent=room?.title||GameData.PLACES[s.place].name;title.textContent='循光赴远境';lock();
     const resources=manifest(s);diagnostics={key:currentKey,status:'loading',completed:0,total:resources.length,percent:0,failed:[]};update(0,'正在唤醒这片远境…');
     // Cap parallel decodes to avoid a memory spike on phones.
@@ -69,7 +78,7 @@
       await prepare(token);
     }catch(error){if(token===generation){console.error('Scene preparation failed',error);failure('场景准备未完成，请重试。');}}
   }
-  function ensure(s){const key=s.place+':'+(s.location?.sceneId||'outdoor');if(key===currentKey)return task;task=run(s);return task;}
+  function ensure(s){const key=GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor');if(key===currentKey)return task;task=run(s);return task;}
   screen.addEventListener('click',e=>{
     if(e.target.closest('[data-loading-retry]'))task=run(currentState,true);
     if(e.target.closest('[data-loading-fallback]')){actions.hidden=true;task=prepare(generation).catch(error=>{console.error(error);failure('场景准备未完成，请重试。');});}
