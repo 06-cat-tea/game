@@ -9,7 +9,7 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.6';
   const page=await create(),startupRequests=[];page.on('request',r=>startupRequests.push(r.url()));let release;const hold=new Promise(r=>release=r);
   await page.route('**/portraits/hero-256.png*',async route=>{await hold;await route.continue();});
   await page.goto(url,{waitUntil:'domcontentloaded'});await ready(page);
-  assert(startupRequests.every(url=>!url.includes('/environment/sprites/')&&!url.includes('/expansion/scenes/')&&!url.includes('/vendor/live2d/')&&!url.includes('/world/buildings/')));
+  assert(startupRequests.every(url=>!url.includes('/art-v2/environment/')&&!url.includes('/art-v2/scenes/')&&!url.includes('/vendor/live2d/')&&!url.includes('/art-v2/buildings/')));
   assert.equal(await page.evaluate(()=>GameLoading.diagnostics().key),'title');checks.push('Title does not fetch the map, interiors or Live2D SDK');
   await page.evaluate(()=>AshenGame.command('continue'));
   const before=await page.evaluate(()=>PixelWorld.getPosition());await page.keyboard.press('d');await page.evaluate(()=>PixelWorld.move(2,0));
@@ -43,7 +43,7 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.6';
   assert(await slow.evaluate(()=>GameLoading.diagnostics().failed.some(r=>r.id==='hero'&&r.reason==='timeout'&&r.url.includes('hero-256.png'))));
   deliver();await ready(slow);assert.equal(await slow.evaluate(()=>GameLoading.diagnostics().failed.length),0);checks.push('Delayed image automatically clears the error and enters the map');
   const flaky=await create();let attempts=0;const retryUrls=[],interrupted=new Set();
-  await flaky.route('**/environment/sprites/**',r=>{
+  await flaky.route('**/art-v2/environment/**',r=>{
     const file=new URL(r.request().url()).pathname;
     if(!interrupted.has(file)&&interrupted.size<13){interrupted.add(file);return r.abort();}
     return r.continue();
@@ -55,7 +55,7 @@ const url=process.argv[2]||'http://127.0.0.1:8080/frontier.html?v=6.6';
   const retry=await create();let fail=true;await retry.route('**/portraits/hero-256.png*',r=>fail?r.abort():r.continue());
   await retry.goto(url);await ready(retry);await retry.locator('[data-command=continue]').click();await retry.waitForFunction(()=>window.GameLoading&&GameLoading.diagnostics().status==='failed');
   assert(await retry.evaluate(()=>GameLoading.blocked()));await retry.screenshot({path:'artifacts/loading-error.png'});fail=false;await retry.locator('[data-loading-retry]').click();await ready(retry);checks.push('Asset failure and retry');
-  const fallback=await create();await fallback.route('**/environment/sprites/**',r=>r.abort());await fallback.goto(url);await ready(fallback);await fallback.locator('[data-command=continue]').click();await fallback.waitForFunction(()=>window.GameLoading&&GameLoading.diagnostics().status==='failed');await fallback.locator('[data-loading-fallback]').click();await ready(fallback);assert(await fallback.evaluate(()=>PixelWorld.assetDiagnostics().scene));checks.push('Explicit procedural fallback');
+  const fallback=await create();await fallback.route('**/art-v2/environment/**',r=>r.abort());await fallback.goto(url);await ready(fallback);await fallback.locator('[data-command=continue]').click();await fallback.waitForFunction(()=>window.GameLoading&&GameLoading.diagnostics().status==='failed');await fallback.locator('[data-loading-fallback]').click();await ready(fallback);assert(await fallback.evaluate(()=>PixelWorld.assetDiagnostics().scene));checks.push('Explicit procedural fallback');
   for(const [width,height] of [[844,390],[390,844]]){
     const mobile=await create({viewport:{width,height},hasTouch:true,isMobile:true});let unblock;const pending=new Promise(r=>unblock=r);await mobile.route('**/portraits/hero-256.png*',async r=>{await pending;await r.continue();});await mobile.goto(url,{waitUntil:'domcontentloaded'});await mobile.waitForFunction(()=>window.AshenGame);await mobile.evaluate(()=>AshenGame.command('continue'));await mobile.waitForTimeout(500);await mobile.screenshot({path:'artifacts/loading-'+width+'x'+height+'.png'});
     const fits=await mobile.evaluate(()=>{const rect=GameViewport.localRect(document.querySelector('.loading-content')),size=GameViewport.size();return rect.x>=0&&rect.y>=0&&rect.x+rect.width<=size.width&&rect.y+rect.height<=size.height;});assert(fits);unblock();await ready(mobile);assert(await mobile.evaluate(()=>!GameHUD.blocked()));await mobile.close();checks.push(width+'x'+height+' loading fits rotated viewport');

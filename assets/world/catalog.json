@@ -12,7 +12,9 @@
       "row": 1,
       "column": 1,
       "master": "buildings/castle-1024.png",
-      "scene": "buildings/castle-512.png"
+      "scene": "../art-v2/buildings/castle.webp",
+      "legacyScene": "buildings/castle-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "town",
@@ -20,7 +22,9 @@
       "row": 1,
       "column": 2,
       "master": "buildings/town-1024.png",
-      "scene": "buildings/town-512.png"
+      "scene": "../art-v2/buildings/town.webp",
+      "legacyScene": "buildings/town-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "church",
@@ -28,7 +32,9 @@
       "row": 1,
       "column": 3,
       "master": "buildings/church-1024.png",
-      "scene": "buildings/church-512.png"
+      "scene": "../art-v2/buildings/church.webp",
+      "legacyScene": "buildings/church-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "forge",
@@ -36,7 +42,9 @@
       "row": 1,
       "column": 4,
       "master": "buildings/forge-1024.png",
-      "scene": "buildings/forge-512.png"
+      "scene": "../art-v2/buildings/forge.webp",
+      "legacyScene": "buildings/forge-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "shop",
@@ -44,7 +52,9 @@
       "row": 1,
       "column": 5,
       "master": "buildings/shop-1024.png",
-      "scene": "buildings/shop-512.png"
+      "scene": "../art-v2/buildings/shop.webp",
+      "legacyScene": "buildings/shop-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "inn",
@@ -52,7 +62,9 @@
       "row": 2,
       "column": 1,
       "master": "buildings/inn-1024.png",
-      "scene": "buildings/inn-512.png"
+      "scene": "../art-v2/buildings/inn.webp",
+      "legacyScene": "buildings/inn-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "guild",
@@ -60,7 +72,9 @@
       "row": 2,
       "column": 2,
       "master": "buildings/guild-1024.png",
-      "scene": "buildings/guild-512.png"
+      "scene": "../art-v2/buildings/guild.webp",
+      "legacyScene": "buildings/guild-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "academy",
@@ -68,7 +82,9 @@
       "row": 2,
       "column": 3,
       "master": "buildings/academy-1024.png",
-      "scene": "buildings/academy-512.png"
+      "scene": "../art-v2/buildings/academy.webp",
+      "legacyScene": "buildings/academy-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "alchemy",
@@ -76,7 +92,9 @@
       "row": 2,
       "column": 4,
       "master": "buildings/alchemy-1024.png",
-      "scene": "buildings/alchemy-512.png"
+      "scene": "../art-v2/buildings/alchemy.webp",
+      "legacyScene": "buildings/alchemy-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "stable",
@@ -84,7 +102,9 @@
       "row": 2,
       "column": 5,
       "master": "buildings/stable-1024.png",
-      "scene": "buildings/stable-512.png"
+      "scene": "../art-v2/buildings/stable.webp",
+      "legacyScene": "buildings/stable-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "farm",
@@ -92,7 +112,9 @@
       "row": 3,
       "column": 1,
       "master": "buildings/farm-1024.png",
-      "scene": "buildings/farm-512.png"
+      "scene": "../art-v2/buildings/farm.webp",
+      "legacyScene": "buildings/farm-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "mine",
@@ -100,7 +122,9 @@
       "row": 3,
       "column": 2,
       "master": "buildings/mine-1024.png",
-      "scene": "buildings/mine-512.png"
+      "scene": "../art-v2/buildings/mine.webp",
+      "legacyScene": "buildings/mine-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "harbor",
@@ -108,7 +132,9 @@
       "row": 3,
       "column": 3,
       "master": "buildings/harbor-1024.png",
-      "scene": "buildings/harbor-512.png"
+      "scene": "../art-v2/buildings/harbor.webp",
+      "legacyScene": "buildings/harbor-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "barracks",
@@ -116,7 +142,9 @@
       "row": 3,
       "column": 4,
       "master": "buildings/barracks-1024.png",
-      "scene": "buildings/barracks-512.png"
+      "scene": "../art-v2/buildings/barracks.webp",
+      "legacyScene": "buildings/barracks-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "gate",
@@ -124,7 +152,9 @@
       "row": 3,
       "column": 5,
       "master": "buildings/gate-1024.png",
-      "scene": "buildings/gate-512.png"
+      "scene": "../art-v2/buildings/gate.webp",
+      "legacyScene": "buildings/gate-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "forest",
@@ -132,7 +162,9 @@
       "row": 4,
       "column": 1,
       "master": "buildings/forest-1024.png",
-      "scene": "buildings/forest-512.png"
+      "scene": "../art-v2/buildings/forest.webp",
+      "legacyScene": "buildings/forest-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "ruins",
@@ -140,7 +172,9 @@
       "row": 4,
       "column": 2,
       "master": "buildings/ruins-1024.png",
-      "scene": "buildings/ruins-512.png"
+      "scene": "../art-v2/buildings/ruins.webp",
+      "legacyScene": "buildings/ruins-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "rift",
@@ -148,7 +182,9 @@
       "row": 4,
       "column": 3,
       "master": "buildings/rift-1024.png",
-      "scene": "buildings/rift-512.png"
+      "scene": "../art-v2/buildings/rift.webp",
+      "legacyScene": "buildings/rift-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "sky-city",
@@ -156,7 +192,9 @@
       "row": 4,
       "column": 4,
       "master": "buildings/sky-city-1024.png",
-      "scene": "buildings/sky-city-512.png"
+      "scene": "../art-v2/buildings/sky-city.webp",
+      "legacyScene": "buildings/sky-city-512.png",
+      "runtimeOverride": true
     },
     {
       "id": "demon-fortress",
@@ -164,7 +202,9 @@
       "row": 4,
       "column": 5,
       "master": "buildings/demon-fortress-1024.png",
-      "scene": "buildings/demon-fortress-512.png"
+      "scene": "../art-v2/buildings/demon-fortress.webp",
+      "legacyScene": "buildings/demon-fortress-512.png",
+      "runtimeOverride": true
     }
   ],
   "portraits": [
@@ -598,5 +638,6 @@
       "prompt": "Use case: background-extraction. Edit target: supplied building atlas. Extract church row 1 column 3. Preserve original isometric architecture and palette. Remove black background and Chinese nameplate. Transparent square PNG, centered, no text."
     }
   ],
-  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8"
+  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8",
+  "cleanupRevision": "f98c4ceddf10c709cb73cba17f23e1ff11250431"
 }

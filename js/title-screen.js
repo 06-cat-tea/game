@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const artwork='assets/title/ashen-frontier-keyart.webp';
+  const artwork='assets/art-v2/title.webp';
   const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function render(s){
     const room=SceneSystem.get(s.location?.sceneId),place=room?.title||GameData.PLACES[s.place].name;

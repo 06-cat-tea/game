@@ -51,6 +51,7 @@
   rooms.market=rooms.shop;rooms["forest-hut"]=rooms.hut;
   const interiors=Object.fromEntries(Object.entries(buildings).flatMap(([,items])=>items.filter(b=>b.interior).map(b=>[b.id,{...rooms[b.interior],buildingId:b.id,occupantKey:b.interior}])));
   const all = Object.values(buildings).flat();
+  window.WorldLayout?.applyBuildings(all);
   window.BuildingSystem = {
     all,
     at: biome => (buildings[biome] || []).map(item => ({...item})),

@@ -2,3 +2,4 @@ artifacts/
 .icon-source.json
 .publish-index
 node_modules/
+assets/art-v2/sources/

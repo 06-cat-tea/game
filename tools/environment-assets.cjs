@@ -27,7 +27,7 @@ async function build(){
  const catalog=JSON.parse(fs.readFileSync(path.join(root,'catalog.json'))),layers=[],report=[];
  fs.mkdirSync(path.resolve(__dirname,'../artifacts'),{recursive:true});
  for(const e of catalog.entries){const master=path.join(root,e.master),hasMaster=fs.existsSync(master),source=hasMaster?master:path.join(root,e.sprite);if(process.argv[3]==='partial'&&!fs.existsSync(source))continue;const meta=await sharp(source).metadata(),stats=await sharp(source).stats();if(!meta.hasAlpha||stats.channels[3].min!==0)throw Error('Missing alpha: '+e.id);
-  if(hasMaster)await sharp(master).trim({background:'#00000000',threshold:10}).resize({width:384,height:384,fit:'inside',withoutEnlargement:true}).webp({lossless:true,effort:6}).toFile(path.join(root,e.sprite));
+  if(hasMaster&&!e.runtimeOverride)await sharp(master).trim({background:'#00000000',threshold:10}).resize({width:384,height:384,fit:'inside',withoutEnlargement:true}).webp({lossless:true,effort:6}).toFile(path.join(root,e.sprite));
   const sm=await sharp(path.join(root,e.sprite)).metadata();e.width=sm.width;e.height=sm.height;if(hasMaster)e.masterSize=[meta.width,meta.height];report.push({id:e.id,alphaMin:stats.channels[3].min,width:sm.width,height:sm.height});
   const x=(e.number-1)%7*160,y=Math.floor((e.number-1)/7)*180;
   layers.push({input:await sharp(path.join(root,e.sprite)).resize(146,146,{fit:'contain',background:'#00000000'}).toBuffer(),left:x+7,top:y+2});

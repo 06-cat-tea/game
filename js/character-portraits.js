@@ -15,6 +15,21 @@
     entry.image=entry.images.neutral;
   }
   const bindings=new WeakMap();
+  // Avatars are mechanically cropped from the same neutral standing art.
+  for(const [id,entry] of Object.entries(entries))if(entry.image)entry.avatar=`assets/characters/${id}/static-v1/avatar.webp`;
+  function avatar(id,name,className='entry-portrait',fallbackType){
+    const entry=entries[id],safe=GameUI.esc;
+    if(!entry?.avatar)return WorldAssets.portrait(entry?.fallbackType||fallbackType,name,className);
+    return `<img class="${safe(className)} character-avatar" data-avatar-id="${safe(id)}" src="${WorldAssets.path('portraits',entry.fallbackType)}" alt="${safe(name)}" draggable="false" decoding="async">`;
+  }
+  function activateAvatars(root){
+    for(const image of root.querySelectorAll('img[data-avatar-id]')){
+      if(bindings.has(image))continue;
+      const entry=entries[image.dataset.avatarId],binding={rank:0};bindings.set(image,binding);
+      const update=()=>{if(image.isConnected&&bindings.get(image)===binding&&WorldAssets.inspect('url',entry.avatar)?.status==='ready'){image.src=WorldAssets.get('url',entry.avatar).src;image.dataset.avatarState='ready';}};
+      binding.update=update;WorldAssets.load('url',entry.avatar).then(update);
+    }
+  }
   const expressionFor=(entry,expression)=>entry?.images?.[expression]?expression:'neutral';
   function preload(id,expression='neutral') {
     const entry=entries[id],url=entry?.images?.[expressionFor(entry,expression)];
@@ -35,6 +50,7 @@
     // Keep the image hidden if Mira's canvas is already rendering.
   }
   function activate(root=document) {
+    activateAvatars(root);
     for(const image of root.querySelectorAll('img[data-standing-id]')) {
       if(bindings.has(image))continue;
       const id=image.dataset.standingId,entry=entries[id],expression=image.dataset.standingExpression;
@@ -58,6 +74,7 @@
   }
   window.addEventListener('worldassetready',event=>{
     if(event.detail.kind!=='url')return;
+    for(const image of document.querySelectorAll('img[data-avatar-id]'))if(entries[image.dataset.avatarId]?.avatar===event.detail.id)bindings.get(image)?.update?.();
     for(const image of document.querySelectorAll('img[data-standing-id]')) {
       const binding=bindings.get(image),entry=entries[image.dataset.standingId],mood=image.dataset.standingExpression;
       if(!binding)continue;
@@ -65,5 +82,5 @@
       else if(entry.image===event.detail.id)apply(image,binding,event.detail.id,0,'neutral');
     }
   });
-  window.CharacterPortraits={entries,preload,markup,activate,setExpression};
+  window.CharacterPortraits={entries,preload,markup,avatar,activate,setExpression};
 })();

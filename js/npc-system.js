@@ -28,6 +28,7 @@
     if(!occupants[n.home])occupants[n.home]=[];
     occupants[n.home].push({id,type:n.type,x:occupants[n.home].length?6.5:4.4,y:occupants[n.home].length?4.5:3.2});
   }
+  window.WorldLayout?.applyNPCs(records);
   const indoorIndex=Object.values(occupants).flat().reduce((out,n)=>{out[n.id]={...records[n.id],...n};return out;},{});
   window.NPCSystem={all:records,indoor:indoorIndex,at:place=>Object.entries(records).filter(([,n])=>n.place===place).map(([id,n])=>({id,...n})),inside:id=>(occupants[id]||[]).map(n=>({...records[n.id],...n,id:n.id}))};
 })();

@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const catalog=new Map(EnvironmentCatalog.map(e=>[e.id,e])),layouts=new Map(),groundCache=new Map();
+  const catalog=new Map(EnvironmentCatalog.map(e=>[e.id,window.ArtCatalog?.environment[e.id]?{...e,width:512,height:512,anchor:window.ArtCatalog.environment[e.id].anchor}:e])),layouts=new Map(),groundCache=new Map();
   const assets={
     town:['village-07-tavern-sign','village-08-market-stall','village-09-supplies','village-10-well','village-11-noticeboard','village-12-lantern-string','water-19-well','forest-08-lamp','forest-12-barrels','forest-09-signpost'],
     wood:['forest-01-oak','forest-02-pine','forest-03-bush','village-16-bush','village-17-stump','village-18-fallen-log','village-20-campfire','village-21-tent','village-22-signpost','village-23-berry-bush','forest-11-flowers'],
@@ -19,13 +19,12 @@
   };
   const cityReplace={lamp:'royal-10-lamp',tree:'royal-07-tree',fountain:'royal-13-fountain',bench:'royal-12-bench',board:'royal-24-noticeboard',wall:'royal-17-wall',bridge:'royal-22-bridge'};
   const npcPoints=place=>(NPCSystem.at(place)||[]).map(n=>({x:Number(n.position?.x??n.x??4),y:Number(n.position?.y??n.y??10)}));
-  function reservedPoints(place){const portals={town:[3,14],wood:[18,14],pass:[17,3],fen:[5,13],coast:[4,15]},p=portals[place];return [WorldRegions.spawn(place),...BuildingSystem.at(place).map(b=>({x:b.x+b.w/2,y:b.y+b.d+1.4})),...npcPoints(place),...(p?[{x:p[0],y:p[1]}]:[])];}
-  function objectWidth(id){return /oak|pine|tree|cypress/.test(id)?34:/lamp|banner/.test(id)?17:/bridge/.test(id)?64:/cliff|waterfall|arch|stairs/.test(id)?42:/fountain|dock|tent|market-stall|lantern-string/.test(id)?34:23;}
+  function reservedPoints(place){const p=window.WorldLayout?.portal(place);return [WorldRegions.spawn(place),...BuildingSystem.at(place).map(b=>({x:b.x+b.w/2,y:b.y+b.d+1.4})),...npcPoints(place),...(p?[p]:[])];}
+  function objectWidth(id){return /oak|pine|tree|cypress/.test(id)?52:/lamp/.test(id)?32:/banner/.test(id)?22:/bridge/.test(id)?64:/cliff|waterfall|arch|stairs/.test(id)?42:/fountain|dock|tent|market-stall|lantern-string/.test(id)?34:23;}
   function available(place,x,y,radius=1.1){
     const b=WorldRegions.bounds(place);if(x<3||y<3||x>b.columns-4||y>b.rows-4)return false;
     if(place==='city'){if(['water','wall'].includes(RoyalCity.terrain(x,y))||Math.abs(x-16)<3||Math.abs(x-48)<3||Math.abs(x-80)<3||[18,42,66].some(v=>Math.abs(y-v)<3))return false;}
-    else if(Math.abs(x-32)<3||Math.abs(y-12)<3||Math.abs(y-32)<3)return false;
-    if(place!=='city'&&x<28&&y<20){const road=place==='town'?10-Math.abs(x-10)*.18:place==='pass'?9-Math.abs(x-11)*.12:place==='wood'?11-Math.abs(x-8)*.1:place==='fen'?12-Math.abs(x-12)*.08:11-Math.abs(x-9)*.11;if(Math.abs(y-road)<2.2)return false;}
+    else if(window.WorldLayout?.onRoad(place,x,y,radius)||window.WorldRegions.blocked(place,x,y))return false;
     if(BuildingSystem.at(place).some(b=>x>b.x-radius&&x<b.x+b.w+radius&&y>b.y-radius&&y<b.y+b.d+radius))return false;
     const reserved=reservedPoints(place);
     return !reserved.some(p=>Math.hypot(x-p.x,y-p.y)<2.4);
@@ -41,16 +40,17 @@
     candidates.sort((a,b)=>((a.x*37+a.y*19)%101)-((b.x*37+b.y*19)%101));
     let index=0;
     for(const asset of assets[place]){const repeats=place==='city'?2:2;
-      for(let n=0;n<repeats;n++){let pos;while(index<candidates.length){const p=candidates[index++];if(!list.some(o=>Math.hypot(o.x-p.x,o.y-p.y)<2.3)){pos=p;break;}}if(pos)list.push({kind:'environment',asset,...pos,width:objectWidth(asset)});}
+      for(let n=0;n<repeats;n++){let pos;while(index<candidates.length){const p=candidates[index++];if(available(place,p.x,p.y,Math.max(1.1,objectWidth(asset)/17))&&!list.some(o=>Math.hypot(o.x-p.x,o.y-p.y)<2.3)){pos=p;break;}}if(pos)list.push({kind:'environment',asset,...pos,width:objectWidth(asset)});}
     }
     // Facade elements use building-relative anchors, never standalone placement.
-    if(place==='town')for(const [i,b]of BuildingSystem.at(place).filter(b=>['town','inn','shop'].includes(b.asset)).entries()){
+    if(place==='town'&&!window.ArtCatalog?.version)for(const [i,b]of BuildingSystem.at(place).filter(b=>['town','inn','shop'].includes(b.asset)).entries()){
       const fitting=['village-04-window','village-05-door','village-06-roof'][i%3];
       const roof=fitting.endsWith('roof'),bw=b.visualWidth||(b.w+b.d)*17*.72,e=catalog.get(fitting),width=roof?bw*.62:15;
       const roofY=(b.w+b.d)*9*.25-bw+width*(e.height/e.width||1)*e.anchor[1]+1;
       list.push({kind:'environment',asset:fitting,x:b.x+b.w/2,y:b.y+b.d/2,buildingId:b.id,fitting:true,width,offsetY:roof?roofY:fitting.endsWith('window')?-17:6});
     }
     if(place==='city'){const bridge=list.find(o=>o.fallback?.kind==='bridge'&&o.y===18);if(bridge)bridge.asset='water-16-water-bridge';}
+    for(const b of window.WorldLayout?.regions[place]?.bridges||[])list.push({kind:'environment',asset:b.asset,x:b.x,y:b.y,width:b.width,anchor:[.5,.75],fallback:{kind:'bridge',x:b.x,y:b.y}});
     for(const o of list)o.place=place;
     layouts.set(place,list);return list;
   }
@@ -80,8 +80,8 @@
       }
     }
     c.save();if(place==='fen')c.filter='saturate(.65) brightness(.8)';
-    for(const[id,x,y,w,d]of patches[place])tile(c,id,project,x,y,w,d);c.restore();
-    if(place==='city')for(const bridge of objects(place).filter(o=>o.fallback?.kind==='bridge'))sprite(c,bridge,project,true);
+    if(place==='city')for(const[id,x,y,w,d]of patches[place])tile(c,id,project,x,y,w,d);c.restore();
+    for(const bridge of objects(place).filter(o=>o.fallback?.kind==='bridge'))sprite(c,bridge,project,true);
     groundCache.set(place,{canvas,left});while(groundCache.size>2)groundCache.delete(groundCache.keys().next().value);ctx.drawImage(canvas,left*2,0);
   }
   function invalidate(){groundCache.clear();}

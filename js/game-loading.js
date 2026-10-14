@@ -5,26 +5,30 @@
   const layers=['worldStage','hudLayer','panelLayer','modal'];
   let currentKey=null,active=true,generation=0,currentState=null,returnFocus=null,task=Promise.resolve(),diagnostics={status:'starting',completed:0,total:0,percent:0,failed:[]};
   // Include off-camera decorations and the whole region's terrain, not just visible sprites.
+  function loadingKey(s){return GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor')+(s.battle?':battle:'+s.battle.name:'');}
   function manifest(s){
     const items=new Map(),add=(kind,id)=>{if(id)items.set(kind+':'+id,{kind,id});},place=s.place,room=SceneSystem.get(s.location?.sceneId);
     if(GameUI.getCurrent()==='title'){
-      add('url',TitleScreen.artwork);add('url','assets/loading/returning-light.webp');add('emblems','brand');return [...items.values()];
+      add('url',TitleScreen.artwork);add('url','assets/art-v2/title.webp');add('emblems','brand');return [...items.values()];
     }
     if(room){
-      if(!room.procedural)add('expansion',room.sceneId);
+      if(!room.procedural||window.ArtCatalog?.scenes[room.sceneId])add('expansion',room.sceneId);
       for(const n of NPCSystem.inside(room.occupantKey||room.buildingId))add('portraits',n.type);
     }else{
       if(place!=='city')add('scenes',place);
-      for(const b of BuildingSystem.at(place))if(place!=='city')add('buildings',b.asset);
+      for(const b of BuildingSystem.at(place))add('buildings',b.asset);
+      if(window.ArtCatalog?.terrain?.[place])add('terrain',place);if(window.ArtCatalog?.terrain?.road)add('terrain','road');
       for(const id of WorldTerrain.resourceIds(place))add('environment',id);
       for(const o of SceneEnvironment.objects(place))add('environment',o.asset);
       for(const p of SceneEnvironment.patches[place]||[])add('environment',p[0]);
       // City people are procedural, but their portraits are used when speaking.
       if(place!=='city')for(const n of NPCSystem.at(place))add('portraits',n.type);
     }
+    for(const id of window.SceneCharacters?.resources(place,room?.sceneId)||[])add('actors',id);
+    if(s.battle){const scene=s.location.sceneId||SceneSystem.route(place)[0]?.id;if(scene)add('expansion',scene);for(const enemy of BattleSystem.init(s.battle).enemies)add('enemies',SceneCharacters.enemyId(enemy,place));for(const id of ['hero',...s.party.active])if(ArtCatalog.actors[id])add('actors',id);}
     add('portraits','hero');
     add('emblems','brand');
-    for(const id of ['map','backpack','main-quest','character','skills','crafting','achievement','settings','dialogue'])add('url','assets/icons/'+id+'-128.png');
+    for(const id of ['map','backpack','main-quest','character','skills','crafting','achievement','settings','dialogue'])add('url','assets/icons/rail/'+id+'.svg');
     return [...items.values()];
   }
   function update(value,message){
@@ -66,7 +70,7 @@
     task=prepare(generation).catch(error=>{console.error(error);failure('场景准备未完成，请重试。');});
   });
   async function run(s,retry=false){
-    const token=++generation;currentState=s;currentKey=GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor');
+    const token=++generation;currentState=s;currentKey=loadingKey(s);
     const room=SceneSystem.get(s.location?.sceneId);destination.textContent=room?.title||GameData.PLACES[s.place].name;title.textContent='循光赴远境';lock();
     const resources=manifest(s);diagnostics={key:currentKey,status:'loading',completed:0,total:resources.length,percent:0,failed:[]};update(0,'正在唤醒这片远境…');
     // Cap parallel decodes to avoid a memory spike on phones.
@@ -86,7 +90,7 @@
       await prepare(token);
     }catch(error){if(token===generation){console.error('Scene preparation failed',error);failure('场景准备未完成，请重试。');}}
   }
-  function ensure(s){const key=GameUI.getCurrent()==='title'?'title':s.place+':'+(s.location?.sceneId||'outdoor');if(key===currentKey)return task;task=run(s);return task;}
+  function ensure(s){const key=loadingKey(s);if(key===currentKey)return task;task=run(s);return task;}
   screen.addEventListener('click',e=>{
     if(e.target.closest('[data-loading-retry]'))task=run(currentState,true);
     if(e.target.closest('[data-loading-fallback]')){actions.hidden=true;task=prepare(generation).catch(error=>{console.error(error);failure('场景准备未完成，请重试。');});}

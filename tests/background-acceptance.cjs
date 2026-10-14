@@ -23,7 +23,7 @@ const sharp=require(process.env.SHARP_MODULE||path.join(require('os').homedir(),
  }
  // Rebuilding a resource cache must refresh both generated and painted backdrops.
  assert(await page.evaluate(()=>{const a=CircleMap.backdrop('city',100,1),revision=WorldTerrain.revision;SceneEnvironment.invalidate();WorldTerrain.invalidate();CircleMap.invalidate();const b=CircleMap.backdrop('city',100,1);return a!==b&&WorldTerrain.revision>revision;}));
- await page.route('**/assets/environment/sprites/**',r=>r.abort());await page.route('**/assets/world/scenes/**',r=>r.abort());await page.reload();await page.waitForFunction(()=>window.AshenGame);await page.evaluate(()=>{AshenGame.command('continue');AshenGame.travel('fen');AshenGame.showScreen('adventure');});
+ await page.route('**/assets/art-v2/environment/**',r=>r.abort());await page.route('**/assets/world/scenes/**',r=>r.abort());await page.reload();await page.waitForFunction(()=>window.AshenGame);await page.evaluate(()=>{AshenGame.command('continue');AshenGame.travel('fen');AshenGame.showScreen('adventure');});
  await page.waitForFunction(()=>GameLoading.diagnostics().status==='failed');await page.locator('[data-loading-fallback]').click();await page.waitForFunction(()=>!GameLoading.blocked());
  assert(await page.evaluate(()=>{CircleMap.draw();return PixelWorld.assetDiagnostics().scene&&CircleMap.backdrop('fen',100,1).width===100;}));assert.deepEqual(errors,[]);
  await browser.close();

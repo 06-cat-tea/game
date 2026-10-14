@@ -15,7 +15,7 @@
       },
       "crop": "crops/water-01-blue-pool.png",
       "master": "masters/water-01-blue-pool.png",
-      "sprite": "sprites/water-01-blue-pool.webp",
+      "sprite": "../art-v2/environment/water-01-blue-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -33,7 +33,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-01-blue-pool.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-02-deep-pool",
@@ -49,7 +51,7 @@
       },
       "crop": "crops/water-02-deep-pool.png",
       "master": "masters/water-02-deep-pool.png",
-      "sprite": "sprites/water-02-deep-pool.webp",
+      "sprite": "../art-v2/environment/water-02-deep-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -67,7 +69,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-02-deep-pool.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-03-clear-pool",
@@ -83,7 +87,7 @@
       },
       "crop": "crops/water-03-clear-pool.png",
       "master": "masters/water-03-clear-pool.png",
-      "sprite": "sprites/water-03-clear-pool.webp",
+      "sprite": "../art-v2/environment/water-03-clear-pool.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -102,7 +106,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "crops/water-03-clear-pool.png"
+      "generationReference": "crops/water-03-clear-pool.png",
+      "legacySprite": "sprites/water-03-clear-pool.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-04-grass-bank",
@@ -118,7 +124,7 @@
       },
       "crop": "crops/water-04-grass-bank.png",
       "master": "masters/water-04-grass-bank.png",
-      "sprite": "sprites/water-04-grass-bank.webp",
+      "sprite": "../art-v2/environment/water-04-grass-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -136,7 +142,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-04-grass-bank.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-05-sand-bank",
@@ -152,7 +160,7 @@
       },
       "crop": "crops/water-05-sand-bank.png",
       "master": "masters/water-05-sand-bank.png",
-      "sprite": "sprites/water-05-sand-bank.webp",
+      "sprite": "../art-v2/environment/water-05-sand-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -170,7 +178,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-05-sand-bank.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-06-flower-bank",
@@ -186,7 +196,7 @@
       },
       "crop": "crops/water-06-flower-bank.png",
       "master": "masters/water-06-flower-bank.png",
-      "sprite": "sprites/water-06-flower-bank.webp",
+      "sprite": "../art-v2/environment/water-06-flower-bank.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -204,7 +214,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-06-flower-bank.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-07-canal-horizontal",
@@ -220,7 +232,7 @@
       },
       "crop": "crops/water-07-canal-horizontal.png",
       "master": "masters/water-07-canal-horizontal.png",
-      "sprite": "sprites/water-07-canal-horizontal.webp",
+      "sprite": "../art-v2/environment/water-07-canal-horizontal.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -238,7 +250,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-07-canal-horizontal.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-08-canal-vertical",
@@ -254,7 +268,7 @@
       },
       "crop": "crops/water-08-canal-vertical.png",
       "master": "masters/water-08-canal-vertical.png",
-      "sprite": "sprites/water-08-canal-vertical.webp",
+      "sprite": "../art-v2/environment/water-08-canal-vertical.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -272,7 +286,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-08-canal-vertical.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-09-canal-left",
@@ -288,7 +304,7 @@
       },
       "crop": "crops/water-09-canal-left.png",
       "master": "masters/water-09-canal-left.png",
-      "sprite": "sprites/water-09-canal-left.webp",
+      "sprite": "../art-v2/environment/water-09-canal-left.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -306,7 +322,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-09-canal-left.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-10-canal-right",
@@ -322,7 +340,7 @@
       },
       "crop": "crops/water-10-canal-right.png",
       "master": "masters/water-10-canal-right.png",
-      "sprite": "sprites/water-10-canal-right.webp",
+      "sprite": "../art-v2/environment/water-10-canal-right.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -340,7 +358,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-10-canal-right.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-11-canal-cross",
@@ -356,7 +376,7 @@
       },
       "crop": "crops/water-11-canal-cross.png",
       "master": "masters/water-11-canal-cross.png",
-      "sprite": "sprites/water-11-canal-cross.webp",
+      "sprite": "../art-v2/environment/water-11-canal-cross.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -374,7 +394,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-11-canal-cross.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-12-canal-cross-wide",
@@ -390,7 +412,7 @@
       },
       "crop": "crops/water-12-canal-cross-wide.png",
       "master": "masters/water-12-canal-cross-wide.png",
-      "sprite": "sprites/water-12-canal-cross-wide.webp",
+      "sprite": "../art-v2/environment/water-12-canal-cross-wide.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -408,7 +430,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-12-canal-cross-wide.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-13-waterfall",
@@ -424,7 +448,7 @@
       },
       "crop": "crops/water-13-waterfall.png",
       "master": "masters/water-13-waterfall.png",
-      "sprite": "sprites/water-13-waterfall.webp",
+      "sprite": "../art-v2/environment/water-13-waterfall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -443,7 +467,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-13-waterfall.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-14-royal-channel",
@@ -459,7 +485,7 @@
       },
       "crop": "crops/water-14-royal-channel.png",
       "master": "masters/water-14-royal-channel.png",
-      "sprite": "sprites/water-14-royal-channel.webp",
+      "sprite": "../art-v2/environment/water-14-royal-channel.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -477,7 +503,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-14-royal-channel.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-15-royal-basin",
@@ -493,7 +521,7 @@
       },
       "crop": "crops/water-15-royal-basin.png",
       "master": "masters/water-15-royal-basin.png",
-      "sprite": "sprites/water-15-royal-basin.webp",
+      "sprite": "../art-v2/environment/water-15-royal-basin.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -511,7 +539,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "crops/water-15-royal-basin.png"
+      "generationReference": "crops/water-15-royal-basin.png",
+      "legacySprite": "sprites/water-15-royal-basin.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-16-water-bridge",
@@ -527,7 +557,7 @@
       },
       "crop": "crops/water-16-water-bridge.png",
       "master": "masters/water-16-water-bridge.png",
-      "sprite": "sprites/water-16-water-bridge.webp",
+      "sprite": "../art-v2/environment/water-16-water-bridge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -545,7 +575,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-16-water-bridge.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-17-royal-fountain",
@@ -561,7 +593,7 @@
       },
       "crop": "crops/water-17-royal-fountain.png",
       "master": "masters/water-17-royal-fountain.png",
-      "sprite": "sprites/water-17-royal-fountain.webp",
+      "sprite": "../art-v2/environment/water-17-royal-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -579,7 +611,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-17-royal-fountain.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-18-lion-fountain",
@@ -595,7 +629,7 @@
       },
       "crop": "crops/water-18-lion-fountain.png",
       "master": "masters/water-18-lion-fountain.png",
-      "sprite": "sprites/water-18-lion-fountain.webp",
+      "sprite": "../art-v2/environment/water-18-lion-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -613,7 +647,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-18-lion-fountain.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-19-well",
@@ -629,7 +665,7 @@
       },
       "crop": "crops/water-19-well.png",
       "master": "masters/water-19-well.png",
-      "sprite": "sprites/water-19-well.webp",
+      "sprite": "../art-v2/environment/water-19-well.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -647,7 +683,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-19-well.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-20-reeds",
@@ -663,7 +701,7 @@
       },
       "crop": "crops/water-20-reeds.png",
       "master": "masters/water-20-reeds.png",
-      "sprite": "sprites/water-20-reeds.webp",
+      "sprite": "../art-v2/environment/water-20-reeds.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -682,7 +720,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-20-reeds.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-21-stepping-stones",
@@ -698,7 +738,7 @@
       },
       "crop": "crops/water-21-stepping-stones.png",
       "master": "masters/water-21-stepping-stones.png",
-      "sprite": "sprites/water-21-stepping-stones.webp",
+      "sprite": "../art-v2/environment/water-21-stepping-stones.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -717,7 +757,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-21-stepping-stones.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-22-dock",
@@ -733,7 +775,7 @@
       },
       "crop": "crops/water-22-dock.png",
       "master": "masters/water-22-dock.png",
-      "sprite": "sprites/water-22-dock.webp",
+      "sprite": "../art-v2/environment/water-22-dock.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -751,7 +793,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-22-dock.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-23-drain",
@@ -767,7 +811,7 @@
       },
       "crop": "crops/water-23-drain.png",
       "master": "masters/water-23-drain.png",
-      "sprite": "sprites/water-23-drain.webp",
+      "sprite": "../art-v2/environment/water-23-drain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -785,7 +829,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-23-drain.webp",
+      "runtimeOverride": true
     },
     {
       "id": "water-24-lilies",
@@ -801,7 +847,7 @@
       },
       "crop": "crops/water-24-lilies.png",
       "master": "masters/water-24-lilies.png",
-      "sprite": "sprites/water-24-lilies.webp",
+      "sprite": "../art-v2/environment/water-24-lilies.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -819,7 +865,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "水域王国环境图标集.png",
-      "generationReference": "sources/water.png"
+      "generationReference": "sources/water.png",
+      "legacySprite": "sprites/water-24-lilies.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-01-cobblestone",
@@ -835,7 +883,7 @@
       },
       "crop": "crops/village-01-cobblestone.png",
       "master": "masters/village-01-cobblestone.png",
-      "sprite": "sprites/village-01-cobblestone.webp",
+      "sprite": "../art-v2/environment/village-01-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -853,7 +901,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-01-cobblestone.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-02-brick",
@@ -869,7 +919,7 @@
       },
       "crop": "crops/village-02-brick.png",
       "master": "masters/village-02-brick.png",
-      "sprite": "sprites/village-02-brick.webp",
+      "sprite": "../art-v2/environment/village-02-brick.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -887,7 +937,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-02-brick.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-03-soil",
@@ -903,7 +955,7 @@
       },
       "crop": "crops/village-03-soil.png",
       "master": "masters/village-03-soil.png",
-      "sprite": "sprites/village-03-soil.webp",
+      "sprite": "../art-v2/environment/village-03-soil.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -922,7 +974,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-03-soil.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-04-window",
@@ -938,7 +992,7 @@
       },
       "crop": "crops/village-04-window.png",
       "master": "masters/village-04-window.png",
-      "sprite": "sprites/village-04-window.webp",
+      "sprite": "../art-v2/environment/village-04-window.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -956,7 +1010,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-04-window.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-05-door",
@@ -972,7 +1028,7 @@
       },
       "crop": "crops/village-05-door.png",
       "master": "masters/village-05-door.png",
-      "sprite": "sprites/village-05-door.webp",
+      "sprite": "../art-v2/environment/village-05-door.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -990,7 +1046,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-05-door.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-06-roof",
@@ -1006,7 +1064,7 @@
       },
       "crop": "crops/village-06-roof.png",
       "master": "masters/village-06-roof.png",
-      "sprite": "sprites/village-06-roof.webp",
+      "sprite": "../art-v2/environment/village-06-roof.webp",
       "category": "fitting",
       "anchor": [
         0.5,
@@ -1024,7 +1082,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-06-roof.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-07-tavern-sign",
@@ -1040,7 +1100,7 @@
       },
       "crop": "crops/village-07-tavern-sign.png",
       "master": "masters/village-07-tavern-sign.png",
-      "sprite": "sprites/village-07-tavern-sign.webp",
+      "sprite": "../art-v2/environment/village-07-tavern-sign.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1058,7 +1118,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-07-tavern-sign.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-08-market-stall",
@@ -1074,7 +1136,7 @@
       },
       "crop": "crops/village-08-market-stall.png",
       "master": "masters/village-08-market-stall.png",
-      "sprite": "sprites/village-08-market-stall.webp",
+      "sprite": "../art-v2/environment/village-08-market-stall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1092,7 +1154,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-08-market-stall.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-09-supplies",
@@ -1108,7 +1172,7 @@
       },
       "crop": "crops/village-09-supplies.png",
       "master": "masters/village-09-supplies.png",
-      "sprite": "sprites/village-09-supplies.webp",
+      "sprite": "../art-v2/environment/village-09-supplies.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1127,7 +1191,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-09-supplies.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-10-well",
@@ -1143,7 +1209,7 @@
       },
       "crop": "crops/village-10-well.png",
       "master": "masters/village-10-well.png",
-      "sprite": "sprites/village-10-well.webp",
+      "sprite": "../art-v2/environment/village-10-well.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1161,7 +1227,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-10-well.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-11-noticeboard",
@@ -1177,7 +1245,7 @@
       },
       "crop": "crops/village-11-noticeboard.png",
       "master": "masters/village-11-noticeboard.png",
-      "sprite": "sprites/village-11-noticeboard.webp",
+      "sprite": "../art-v2/environment/village-11-noticeboard.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1195,7 +1263,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-11-noticeboard.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-12-lantern-string",
@@ -1211,7 +1281,7 @@
       },
       "crop": "crops/village-12-lantern-string.png",
       "master": "masters/village-12-lantern-string.png",
-      "sprite": "sprites/village-12-lantern-string.webp",
+      "sprite": "../art-v2/environment/village-12-lantern-string.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1229,7 +1299,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-12-lantern-string.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-13-meadow",
@@ -1245,7 +1317,7 @@
       },
       "crop": "crops/village-13-meadow.png",
       "master": "masters/village-13-meadow.png",
-      "sprite": "sprites/village-13-meadow.webp",
+      "sprite": "../art-v2/environment/village-13-meadow.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1263,7 +1335,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-13-meadow.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-14-trail",
@@ -1279,7 +1353,7 @@
       },
       "crop": "crops/village-14-trail.png",
       "master": "masters/village-14-trail.png",
-      "sprite": "sprites/village-14-trail.webp",
+      "sprite": "../art-v2/environment/village-14-trail.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1297,7 +1371,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-14-trail.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-15-cliff",
@@ -1313,7 +1389,7 @@
       },
       "crop": "crops/village-15-cliff.png",
       "master": "masters/village-15-cliff.png",
-      "sprite": "sprites/village-15-cliff.webp",
+      "sprite": "../art-v2/environment/village-15-cliff.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1331,7 +1407,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-15-cliff.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-16-bush",
@@ -1347,7 +1425,7 @@
       },
       "crop": "crops/village-16-bush.png",
       "master": "masters/village-16-bush.png",
-      "sprite": "sprites/village-16-bush.webp",
+      "sprite": "../art-v2/environment/village-16-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1365,7 +1443,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-16-bush.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-17-stump",
@@ -1381,7 +1461,7 @@
       },
       "crop": "crops/village-17-stump.png",
       "master": "masters/village-17-stump.png",
-      "sprite": "sprites/village-17-stump.webp",
+      "sprite": "../art-v2/environment/village-17-stump.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1399,7 +1479,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-17-stump.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-18-fallen-log",
@@ -1415,7 +1497,7 @@
       },
       "crop": "crops/village-18-fallen-log.png",
       "master": "masters/village-18-fallen-log.png",
-      "sprite": "sprites/village-18-fallen-log.webp",
+      "sprite": "../art-v2/environment/village-18-fallen-log.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1433,7 +1515,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-18-fallen-log.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-19-rocks",
@@ -1449,7 +1533,7 @@
       },
       "crop": "crops/village-19-rocks.png",
       "master": "masters/village-19-rocks.png",
-      "sprite": "sprites/village-19-rocks.webp",
+      "sprite": "../art-v2/environment/village-19-rocks.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1467,7 +1551,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-19-rocks.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-20-campfire",
@@ -1483,7 +1569,7 @@
       },
       "crop": "crops/village-20-campfire.png",
       "master": "masters/village-20-campfire.png",
-      "sprite": "sprites/village-20-campfire.webp",
+      "sprite": "../art-v2/environment/village-20-campfire.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1501,7 +1587,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-20-campfire.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-21-tent",
@@ -1517,7 +1605,7 @@
       },
       "crop": "crops/village-21-tent.png",
       "master": "masters/village-21-tent.png",
-      "sprite": "sprites/village-21-tent.webp",
+      "sprite": "../art-v2/environment/village-21-tent.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1536,7 +1624,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-21-tent.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-22-signpost",
@@ -1552,7 +1642,7 @@
       },
       "crop": "crops/village-22-signpost.png",
       "master": "masters/village-22-signpost.png",
-      "sprite": "sprites/village-22-signpost.webp",
+      "sprite": "../art-v2/environment/village-22-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1570,7 +1660,9 @@
       ],
       "generationTool": "image_gen.imagegen",
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-22-signpost.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-23-berry-bush",
@@ -1586,7 +1678,7 @@
       },
       "crop": "crops/village-23-berry-bush.png",
       "master": "masters/village-23-berry-bush.png",
-      "sprite": "sprites/village-23-berry-bush.webp",
+      "sprite": "../art-v2/environment/village-23-berry-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1604,7 +1696,9 @@
         1024
       ],
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-23-berry-bush.webp",
+      "runtimeOverride": true
     },
     {
       "id": "village-24-fence",
@@ -1620,7 +1714,7 @@
       },
       "crop": "crops/village-24-fence.png",
       "master": "masters/village-24-fence.png",
-      "sprite": "sprites/village-24-fence.webp",
+      "sprite": "../art-v2/environment/village-24-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1638,7 +1732,9 @@
         1024
       ],
       "sourceName": "奇幻小镇与森林环境图标集.png",
-      "generationReference": "sources/village.png"
+      "generationReference": "sources/village.png",
+      "legacySprite": "sprites/village-24-fence.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-01-marble",
@@ -1654,7 +1750,7 @@
       },
       "crop": "crops/royal-01-marble.png",
       "master": "masters/royal-01-marble.png",
-      "sprite": "sprites/royal-01-marble.webp",
+      "sprite": "../art-v2/environment/royal-01-marble.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1672,7 +1768,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-01-marble.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-02-cobblestone",
@@ -1688,7 +1786,7 @@
       },
       "crop": "crops/royal-02-cobblestone.png",
       "master": "masters/royal-02-cobblestone.png",
-      "sprite": "sprites/royal-02-cobblestone.webp",
+      "sprite": "../art-v2/environment/royal-02-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1706,7 +1804,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-02-cobblestone.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-03-brick",
@@ -1722,7 +1822,7 @@
       },
       "crop": "crops/royal-03-brick.png",
       "master": "masters/royal-03-brick.png",
-      "sprite": "sprites/royal-03-brick.webp",
+      "sprite": "../art-v2/environment/royal-03-brick.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1740,7 +1840,9 @@
         1145
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-03-brick.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-04-grass",
@@ -1756,7 +1858,7 @@
       },
       "crop": "crops/royal-04-grass.png",
       "master": "masters/royal-04-grass.png",
-      "sprite": "sprites/royal-04-grass.webp",
+      "sprite": "../art-v2/environment/royal-04-grass.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1774,7 +1876,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-04-grass.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-05-flower-grass",
@@ -1790,7 +1894,7 @@
       },
       "crop": "crops/royal-05-flower-grass.png",
       "master": "masters/royal-05-flower-grass.png",
-      "sprite": "sprites/royal-05-flower-grass.webp",
+      "sprite": "../art-v2/environment/royal-05-flower-grass.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -1808,7 +1912,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-05-flower-grass.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-06-hedge",
@@ -1824,7 +1930,7 @@
       },
       "crop": "crops/royal-06-hedge.png",
       "master": "masters/royal-06-hedge.png",
-      "sprite": "sprites/royal-06-hedge.webp",
+      "sprite": "../art-v2/environment/royal-06-hedge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1842,7 +1948,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-06-hedge.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-07-tree",
@@ -1858,7 +1966,7 @@
       },
       "crop": "crops/royal-07-tree.png",
       "master": "masters/royal-07-tree.png",
-      "sprite": "sprites/royal-07-tree.webp",
+      "sprite": "../art-v2/environment/royal-07-tree.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1876,7 +1984,9 @@
         1205
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-07-tree.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-08-cypress",
@@ -1892,7 +2002,7 @@
       },
       "crop": "crops/royal-08-cypress.png",
       "master": "masters/royal-08-cypress.png",
-      "sprite": "sprites/royal-08-cypress.webp",
+      "sprite": "../art-v2/environment/royal-08-cypress.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1910,7 +2020,9 @@
         1199
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-08-cypress.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-09-flower-urn",
@@ -1926,7 +2038,7 @@
       },
       "crop": "crops/royal-09-flower-urn.png",
       "master": "masters/royal-09-flower-urn.png",
-      "sprite": "sprites/royal-09-flower-urn.webp",
+      "sprite": "../art-v2/environment/royal-09-flower-urn.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1944,7 +2056,9 @@
         1207
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-09-flower-urn.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-10-lamp",
@@ -1960,7 +2074,7 @@
       },
       "crop": "crops/royal-10-lamp.png",
       "master": "masters/royal-10-lamp.png",
-      "sprite": "sprites/royal-10-lamp.webp",
+      "sprite": "../art-v2/environment/royal-10-lamp.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -1978,7 +2092,9 @@
         1536
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-10-lamp.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-11-banner",
@@ -1994,7 +2110,7 @@
       },
       "crop": "crops/royal-11-banner.png",
       "master": "masters/royal-11-banner.png",
-      "sprite": "sprites/royal-11-banner.webp",
+      "sprite": "../art-v2/environment/royal-11-banner.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2012,7 +2128,9 @@
         1536
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-11-banner.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-12-bench",
@@ -2028,7 +2146,7 @@
       },
       "crop": "crops/royal-12-bench.png",
       "master": "masters/royal-12-bench.png",
-      "sprite": "sprites/royal-12-bench.webp",
+      "sprite": "../art-v2/environment/royal-12-bench.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2046,7 +2164,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-12-bench.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-13-fountain",
@@ -2062,7 +2182,7 @@
       },
       "crop": "crops/royal-13-fountain.png",
       "master": "masters/royal-13-fountain.png",
-      "sprite": "sprites/royal-13-fountain.webp",
+      "sprite": "../art-v2/environment/royal-13-fountain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2080,7 +2200,9 @@
         1168
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-13-fountain.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-14-statue",
@@ -2096,7 +2218,7 @@
       },
       "crop": "crops/royal-14-statue.png",
       "master": "masters/royal-14-statue.png",
-      "sprite": "sprites/royal-14-statue.webp",
+      "sprite": "../art-v2/environment/royal-14-statue.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2114,7 +2236,9 @@
         1536
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-14-statue.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-15-stairs",
@@ -2130,7 +2254,7 @@
       },
       "crop": "crops/royal-15-stairs.png",
       "master": "masters/royal-15-stairs.png",
-      "sprite": "sprites/royal-15-stairs.webp",
+      "sprite": "../art-v2/environment/royal-15-stairs.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2148,7 +2272,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-15-stairs.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-16-arch",
@@ -2164,7 +2290,7 @@
       },
       "crop": "crops/royal-16-arch.png",
       "master": "masters/royal-16-arch.png",
-      "sprite": "sprites/royal-16-arch.webp",
+      "sprite": "../art-v2/environment/royal-16-arch.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2182,7 +2308,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-16-arch.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-17-wall",
@@ -2198,7 +2326,7 @@
       },
       "crop": "crops/royal-17-wall.png",
       "master": "masters/royal-17-wall.png",
-      "sprite": "sprites/royal-17-wall.webp",
+      "sprite": "../art-v2/environment/royal-17-wall.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2216,7 +2344,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-17-wall.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-18-iron-fence",
@@ -2232,7 +2362,7 @@
       },
       "crop": "crops/royal-18-iron-fence.png",
       "master": "masters/royal-18-iron-fence.png",
-      "sprite": "sprites/royal-18-iron-fence.webp",
+      "sprite": "../art-v2/environment/royal-18-iron-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2250,7 +2380,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-18-iron-fence.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-19-flowerbed",
@@ -2266,7 +2398,7 @@
       },
       "crop": "crops/royal-19-flowerbed.png",
       "master": "masters/royal-19-flowerbed.png",
-      "sprite": "sprites/royal-19-flowerbed.webp",
+      "sprite": "../art-v2/environment/royal-19-flowerbed.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2284,7 +2416,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-19-flowerbed.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-20-crates",
@@ -2300,7 +2434,7 @@
       },
       "crop": "crops/royal-20-crates.png",
       "master": "masters/royal-20-crates.png",
-      "sprite": "sprites/royal-20-crates.webp",
+      "sprite": "../art-v2/environment/royal-20-crates.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2318,7 +2452,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-20-crates.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-21-signpost",
@@ -2334,7 +2470,7 @@
       },
       "crop": "crops/royal-21-signpost.png",
       "master": "masters/royal-21-signpost.png",
-      "sprite": "sprites/royal-21-signpost.webp",
+      "sprite": "../art-v2/environment/royal-21-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2352,7 +2488,9 @@
         1230
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-21-signpost.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-22-bridge",
@@ -2368,7 +2506,7 @@
       },
       "crop": "crops/royal-22-bridge.png",
       "master": "masters/royal-22-bridge.png",
-      "sprite": "sprites/royal-22-bridge.webp",
+      "sprite": "../art-v2/environment/royal-22-bridge.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2386,7 +2524,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-22-bridge.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-23-drain",
@@ -2402,7 +2542,7 @@
       },
       "crop": "crops/royal-23-drain.png",
       "master": "masters/royal-23-drain.png",
-      "sprite": "sprites/royal-23-drain.webp",
+      "sprite": "../art-v2/environment/royal-23-drain.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2420,7 +2560,9 @@
         1024
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-23-drain.webp",
+      "runtimeOverride": true
     },
     {
       "id": "royal-24-noticeboard",
@@ -2436,7 +2578,7 @@
       },
       "crop": "crops/royal-24-noticeboard.png",
       "master": "masters/royal-24-noticeboard.png",
-      "sprite": "sprites/royal-24-noticeboard.webp",
+      "sprite": "../art-v2/environment/royal-24-noticeboard.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2454,7 +2596,9 @@
         1206
       ],
       "sourceName": "皇家幻想城镇环境素材图集.png",
-      "generationReference": "sources/royal.png"
+      "generationReference": "sources/royal.png",
+      "legacySprite": "sprites/royal-24-noticeboard.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-01-oak",
@@ -2470,7 +2614,7 @@
       },
       "crop": "crops/forest-01-oak.png",
       "master": "masters/forest-01-oak.png",
-      "sprite": "sprites/forest-01-oak.webp",
+      "sprite": "../art-v2/environment/forest-01-oak.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2491,7 +2635,9 @@
         1241
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-01-oak.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-02-pine",
@@ -2507,7 +2653,7 @@
       },
       "crop": "crops/forest-02-pine.png",
       "master": "masters/forest-02-pine.png",
-      "sprite": "sprites/forest-02-pine.webp",
+      "sprite": "../art-v2/environment/forest-02-pine.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2525,7 +2671,9 @@
         1448
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-02-pine.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-03-bush",
@@ -2541,7 +2689,7 @@
       },
       "crop": "crops/forest-03-bush.png",
       "master": "masters/forest-03-bush.png",
-      "sprite": "sprites/forest-03-bush.webp",
+      "sprite": "../art-v2/environment/forest-03-bush.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2560,7 +2708,9 @@
         1131
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-03-bush.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-04-rocks",
@@ -2576,7 +2726,7 @@
       },
       "crop": "crops/forest-04-rocks.png",
       "master": "masters/forest-04-rocks.png",
-      "sprite": "sprites/forest-04-rocks.webp",
+      "sprite": "../art-v2/environment/forest-04-rocks.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2595,7 +2745,9 @@
         1151
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-04-rocks.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-05-soil",
@@ -2611,7 +2763,7 @@
       },
       "crop": "crops/forest-05-soil.png",
       "master": "masters/forest-05-soil.png",
-      "sprite": "sprites/forest-05-soil.webp",
+      "sprite": "../art-v2/environment/forest-05-soil.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2630,7 +2782,9 @@
         1198
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-05-soil.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-06-cobblestone",
@@ -2646,7 +2800,7 @@
       },
       "crop": "crops/forest-06-cobblestone.png",
       "master": "masters/forest-06-cobblestone.png",
-      "sprite": "sprites/forest-06-cobblestone.webp",
+      "sprite": "../art-v2/environment/forest-06-cobblestone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2664,7 +2818,9 @@
         1192
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-06-cobblestone.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-07-flagstone",
@@ -2680,7 +2836,7 @@
       },
       "crop": "crops/forest-07-flagstone.png",
       "master": "masters/forest-07-flagstone.png",
-      "sprite": "sprites/forest-07-flagstone.webp",
+      "sprite": "../art-v2/environment/forest-07-flagstone.webp",
       "category": "ground",
       "anchor": [
         0.5,
@@ -2699,7 +2855,9 @@
         1159
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-07-flagstone.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-08-lamp",
@@ -2715,7 +2873,7 @@
       },
       "crop": "crops/forest-08-lamp.png",
       "master": "masters/forest-08-lamp.png",
-      "sprite": "sprites/forest-08-lamp.webp",
+      "sprite": "../art-v2/environment/forest-08-lamp.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2733,7 +2891,9 @@
         1536
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-08-lamp.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-09-signpost",
@@ -2749,7 +2909,7 @@
       },
       "crop": "crops/forest-09-signpost.png",
       "master": "masters/forest-09-signpost.png",
-      "sprite": "sprites/forest-09-signpost.webp",
+      "sprite": "../art-v2/environment/forest-09-signpost.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2767,7 +2927,9 @@
         1385
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "crops/forest-09-signpost.png"
+      "generationReference": "crops/forest-09-signpost.png",
+      "legacySprite": "sprites/forest-09-signpost.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-10-fence",
@@ -2783,7 +2945,7 @@
       },
       "crop": "crops/forest-10-fence.png",
       "master": "masters/forest-10-fence.png",
-      "sprite": "sprites/forest-10-fence.webp",
+      "sprite": "../art-v2/environment/forest-10-fence.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2801,7 +2963,9 @@
         1086
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-10-fence.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-11-flowers",
@@ -2817,7 +2981,7 @@
       },
       "crop": "crops/forest-11-flowers.png",
       "master": "masters/forest-11-flowers.png",
-      "sprite": "sprites/forest-11-flowers.webp",
+      "sprite": "../art-v2/environment/forest-11-flowers.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2835,7 +2999,9 @@
         1195
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-11-flowers.webp",
+      "runtimeOverride": true
     },
     {
       "id": "forest-12-barrels",
@@ -2851,7 +3017,7 @@
       },
       "crop": "crops/forest-12-barrels.png",
       "master": "masters/forest-12-barrels.png",
-      "sprite": "sprites/forest-12-barrels.webp",
+      "sprite": "../art-v2/environment/forest-12-barrels.webp",
       "category": "object",
       "anchor": [
         0.5,
@@ -2870,8 +3036,11 @@
         1044
       ],
       "sourceName": "手绘风格奇幻 RPG 环境素材表.png",
-      "generationReference": "sources/forest.png"
+      "generationReference": "sources/forest.png",
+      "legacySprite": "sprites/forest-12-barrels.webp",
+      "runtimeOverride": true
     }
   ],
-  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8"
+  "sourceRevision": "c1d6d93095437dbe65253812ee1c294127fe5bb8",
+  "cleanupRevision": "f98c4ceddf10c709cb73cba17f23e1ff11250431"
 }
